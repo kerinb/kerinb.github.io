@@ -3,9 +3,9 @@ layout: default
 title: Breandán's Research
 ---
 
-# <center> Publications </center>
+# Publications 
 
-## <center> National Conferences </center>
+## National Conferences 
 <hr width="900px">
 
 1. Kerin, B., Caputo, A., Lawless, S. 2019. Temporal Word Embeddings for Dynamic User Profiling in Twitter. 
