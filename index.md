@@ -41,3 +41,27 @@ My main academic research interests include, but are not limited to;
 * User Profing <br>
 * Privacy Preserving AI<br>
 </p>
+
+<div class="row bottom30">
+	<div class="col-sm-3">
+	</div>
+	<div class="col-sm-6">
+		<a class="twitter-timeline"
+			href="https://twitter.com/BKerin_" data-tweet-limit="5">Tweets by BKerin_<</a>
+		<script>
+			!function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+						.test(d.location) ? 'http' : 'https';
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = p
+							+ "://platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, "script", "twitter-wjs");
+		</script>
+	</div>
+	<div class="col-sm-3">
+	</div>
+</div>
