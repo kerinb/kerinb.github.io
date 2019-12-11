@@ -1,33 +1,19 @@
-<!-- this is the main layout that will contain repeated elements like our <head> and <footer> -->
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-					<li><a href="/research">Research</a></li>
-					<li><a href="/miscellaneous">Miscellaneous</a></li>
-	    		</ul>
-			</nav>
-			<div class="container">
-			
-			{{ content }}
-			
-			</div><!-- /.container -->
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:b.m.kerin96@gmail.com">Email</a></li>
-	        		<li><a href="https://github.com/kerinb">GitHub</a></li>
-					<li><a href="https://www.linkedin.com/in/bkerin/">LinkedIn</a></li>
-					<li><a href="https://twitter.com/BKerin_">Twitter</a></li>
-				</ul>
-			</footer>
-		</body>
-	</html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+  </body>
+
+</html>
