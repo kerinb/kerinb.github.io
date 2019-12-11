@@ -3,4 +3,14 @@ layout: default
 title: Breandán's Research
 ---
 
-# placeholder for papers and tutorials  I like
+# Regerences to interesting tutorials and research papers
+
+blah blah blah
+
+## Interesting Tutorials
+
+blah blah blah
+
+## Interesting Research Papers
+
+blah blah blah

@@ -3,5 +3,4 @@ layout: default
 title: Breandán's Research
 ---
 
-# Place holder for Other section of web site
-
+Note: This is only really a placeholder for the moment - I may or may not get rid of it later on depending on if its needed
