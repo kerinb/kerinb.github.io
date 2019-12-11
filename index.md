@@ -42,10 +42,10 @@ My main academic research interests include, but are not limited to; <br>
 * Privacy Preserving AI<br>
 </p>
 
-<div class="row bottom30">
-	<div class="col-xs-4">
+<div class="row bottom30" align="center">
+	<div class="col-xs-4" align="center">
 	</div>
-	<div class="col-xs-8">
+	<div class="col-xs-8" align="center">
 		<a class="twitter-timeline" width="600" height="500" 
 		href="https://twitter.com/BKerin_" data-tweet-limit="5">Tweets by BKerin_<</a>
 		<script>
