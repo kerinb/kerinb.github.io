@@ -11,24 +11,25 @@
 			<style>
 				/* Add a black background color to the top navigation */
 				.topnav {
-				  background-color: #FFFFFF;
+				  background-color: #333;
 				  overflow: hidden;
 				}
 
 				/* Style the links inside the navigation bar */
 				.topnav a {
 				  float: left;
-				  display: inline;
-				  color: #D3D3D3;
+				  display: block;
+				  color: #f2f2f2;
 				  text-align: center;
-				  padding: 0px;
+				  padding: 14px 16px;
 				  text-decoration: none;
+				  font-size: 17px;
 				}
 
 				/* Add an active class to highlight the current page */
 				.active {
-				  background-color: #F5F5F5;
-				  color: D3D3D3;
+				  background-color: #4CAF50;
+				  color: white;
 				}
 
 				/* Hide the link that should open and close the topnav on small screens */
@@ -44,10 +45,11 @@
 
 				/* Style the dropdown button to fit inside the topnav */
 				.dropdown .dropbtn {
+				  font-size: 17px;
 				  border: none;
 				  outline: none;
 				  color: white;
-				  padding: 0px;
+				  padding: 14px 16px;
 				  background-color: inherit;
 				  font-family: inherit;
 				  margin: 0;
@@ -55,10 +57,11 @@
 
 				/* Style the dropdown content (hidden by default) */
 				.dropdown-content {
-				  display: inline;
+				  display: none;
 				  position: absolute;
-				  background-color: #F9f9f9;
+				  background-color: #f9f9f9;
 				  min-width: 160px;
+				  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 				  z-index: 1;
 				}
 
@@ -66,9 +69,9 @@
 				.dropdown-content a {
 				  float: none;
 				  color: black;
-				  padding: 0px;
+				  padding: 12px 16px;
 				  text-decoration: none;
-				  display: inline;
+				  display: block;
 				  text-align: left;
 				}
 
