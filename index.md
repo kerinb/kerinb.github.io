@@ -46,7 +46,7 @@ My main academic research interests include, but are not limited to; <br>
 	<div class="col-xs-4">
 	</div>
 	<div class="col-xs-8">
-		<a class="twitter-timeline" width="300" height="500" 
+		<a class="twitter-timeline" width="600" height="500" 
 		href="https://twitter.com/BKerin_" data-tweet-limit="5">Tweets by BKerin_<</a>
 		<script>
 			!function(d, s, id) {
