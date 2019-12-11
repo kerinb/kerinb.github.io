@@ -43,9 +43,9 @@ My main academic research interests include, but are not limited to;
 </p>
 
 <div class="row bottom30">
-	<div class="col-sm-3">
+	<div class="col-xs-4">
 	</div>
-	<div class="col-sm-6">
+	<div class="col-xs-8">
 		<a class="twitter-timeline"
 			href="https://twitter.com/BKerin_" data-tweet-limit="5">Tweets by BKerin_<</a>
 		<script>
@@ -62,6 +62,6 @@ My main academic research interests include, but are not limited to;
 			}(document, "script", "twitter-wjs");
 		</script>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-xs-4">
 	</div>
 </div>
