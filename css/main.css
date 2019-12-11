@@ -44,5 +44,10 @@ ul.posts li {
     list-style: none;
 }
 
+hr.about_index {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 
