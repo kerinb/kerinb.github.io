@@ -9,15 +9,24 @@
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
 		</head>
 		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-					<li><a href="/research">Research</a></li>
-					<li><a href="/miscellaneous">Miscellaneous</a></li>
-	    		</ul>
-			</nav>
+			<div class="navbar">
+				<a href="/">About</a>
+				<a href="/cv">CV</a>
+				<a href="/blog">Blog</a>
+				<a href="/research">Research</a>
+				
+				<div class="dropdown">
+					<button class="dropbtn">Miscellaneous 
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="#">Study Material</a>
+						<a href="#">Research Supplements</a>
+						<a href="#">Other</a>
+					</div>
+				</div> 
+			</div>
+			
 			<div class="container">
 			
 			{{ content }}
