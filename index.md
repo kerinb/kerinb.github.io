@@ -22,7 +22,7 @@ title: Breandán Kerin's Website
 <table width="100%" border="0" cellpadding="5">
 	<tr>
 		<td align="left" valign="center">
-			<p align="justify" style="max-width:600px">
+			<p align="justify" style="max-width:500px">
 
 				M.A.I, B.A.I and B.A, Computer Engineering <br>
 				University Dublin, Trinity College Dublin, Ireland <br>
@@ -33,7 +33,7 @@ title: Breandán Kerin's Website
 			</p>
 		</td>
 		<td align="center" valign="center">
-			<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;max-width:200px">
+			<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;max-width:300px">
 			<br />
 		</td>
 	</tr>
