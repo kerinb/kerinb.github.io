@@ -16,12 +16,11 @@ title: Breandán Kerin's Website
 		float:right;
 	}
 </style>
-
-<table width="1000" border="0" cellpadding="5">
-	<tr>
-		<td align="center" valign="center">
 			# Breandán Kerin <br>
 
+<table width="100%" border="0" cellpadding="5">
+	<tr>
+		<td align="left" valign="center">
 			M.A.I, B.A.I and B.A, Computer Engineering <br>
 			University Dublin, Trinity College Dublin, Ireland <br>
 
@@ -35,8 +34,6 @@ title: Breandán Kerin's Website
 		</td>
 	</tr>
 </table>
-
-<br> 
 
 <center> 
 	<hr class="about_index"> 
