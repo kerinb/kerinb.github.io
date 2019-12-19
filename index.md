@@ -3,17 +3,34 @@ layout: default
 title: Breandán Kerin's Website
 ---
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	.myImage {
+		float: left;
+		height: 75px;
+		width: 235px;
+		font-family: Veranda;
+	}
+	.heading {
+		float:right;
+	}
+</style>
+
 # Breandán Kerin <br>
-M.A.I, B.A.I and B.A, Computer Engineering <br>
-University Dublin, Trinity College Dublin, Ireland <br>
+<body>
+	<img src="me_in_lavaux_grey_vignette_small_square.png" class="myImage"/>
+	<p>
+		M.A.I, B.A.I and B.A, Computer Engineering <br>
+		University Dublin, Trinity College Dublin, Ireland <br>
 
-<a href="/files/Breandan_CV.pdf" target="_blank"><em>Curriculum Vitae</em></a> <small> (Updated: Dec, 2019) </small> <br>
-<em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a> <br>
-<center> 
-<hr class="about_index"> </center> 
+		<a href="/files/Breandan_CV.pdf" target="_blank"><em>Curriculum Vitae</em></a> <small> (Updated: Dec, 2019) </small> <br>
+		<em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a> <br>
+		<center> 
+		<hr class="about_index"> </center> 
 
-<hr style="height:10pt; visibility:hidden;" />
-
+		<hr style="height:10pt; visibility:hidden;" />
+	</p>
+</body>
 ## About Me
 <p align="justify" style="max-width:600px">
 I am a Masters Graduate in Computer Engineering with a First Class Honours (1.1) in both my Masters and Bachelours.
