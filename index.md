@@ -50,45 +50,33 @@ title: Breandán Kerin's Website
 
 <hr style="height:10pt; visibility:hidden;" />
 		
-<h2>
-	About Me
-</h2>
+## About Me
 <p align="justify" style="max-width:600px">
-	<h3>
-		I am a Masters Graduate in Computer Engineering with a First Class Honours (1.1) in both my Masters and Bachelours.
-		I received  both my Masters and Bachelours from <em><a class="tosu" href="https://www.scss.tcd.ie/" target="_blank"> 
-		Trinity College Dublin</a></em>.
-	</h3>
+I am a Masters Graduate in Computer Engineering with a First Class Honours (1.1) in both my Masters and Bachelours.
+I received  both my Masters and Bachelours from <em><a class="tosu" href="https://www.scss.tcd.ie/" target="_blank"> 
+Trinity College Dublin</a></em>.
 </p>
 
 <p align="justify" style="max-width:600px">
-	<h3>
-		As part of my MAI I completed an extensive research dissertation, supervised by 
-		<a href="https://www.scss.tcd.ie/Seamus.Lawless/" target="_blank">Prof. Séamus Lawless</a> and 
-		<a href="https://www.computing.dcu.ie/people/dr-annalina-caputo" target="_blank">Dr. Annalina Caputo</a> in the
-		<a href="https://www.adaptcentre.ie/" target="_blank">Adapt Centre TCD</a>. 
+As part of my MAI I completed an extensive research dissertation, supervised by 
+<a href="https://www.scss.tcd.ie/Seamus.Lawless/" target="_blank">Prof. Séamus Lawless</a> and 
+<a href="https://www.computing.dcu.ie/people/dr-annalina-caputo" target="_blank">Dr. Annalina Caputo</a> in the
+ <a href="https://www.adaptcentre.ie/" target="_blank">Adapt Centre TCD</a>. 
 
-		My research was published at the <a href="http://aics2019.datascienceinstitute.ie/index.html" target="_blank">AICS 2019</a> conference. 
-	</h3>
+My research was published at the <a href="http://aics2019.datascienceinstitute.ie/index.html" target="_blank">AICS 2019</a> conference. 
 </p>
 
 <p align="justify" style="max-width:600px">
-	<h3>
-		I am currently looking for a full time position in a Data Science, Natural Language Processing or Machine Learning Engineer capacity.
-	</h3>
+I am currently looking for a full time position in a Data Science, Natural Language Processing or Machine Learning Engineer capacity.
 </p>
 
-<h2>
-	Research Interests
-</h2>
+## Research Interests
 <p align="justify" style="max-width:600px">
-	<h3>
-		My main academic research interests include, but are not limited to; <br>
-		* Natural Language Processing<br>
-		* Machine Learning and Deep Learning<br>
-		* User Profing <br>
-		* Privacy Preserving AI<br>
-	<h3>
+My main academic research interests include, but are not limited to; <br>
+* Natural Language Processing<br>
+* Machine Learning and Deep Learning<br>
+* User Profing <br>
+* Privacy Preserving AI<br>
 </p>
 
 <div class="row bottom30" align="center">
