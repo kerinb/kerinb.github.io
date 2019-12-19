@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Breandán's Research
+title: Interesting Research Papers
 ---
 
 # References to interesting research papers

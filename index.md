@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Breandán Kerin
+title: Breandán Kerin's Website
 ---
 
 # Breandán Kerin <br>

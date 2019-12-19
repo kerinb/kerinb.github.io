@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Breandán's Research
+title: Breandán's Research Publications
 ---
 
 # Publications 
