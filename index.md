@@ -24,7 +24,7 @@ University Dublin, Trinity College Dublin, Ireland <br>
 
 <a href="/files/Breandan_CV.pdf" target="_blank"><em>Curriculum Vitae</em></a> <small> (Updated: Dec, 2019) </small> <br>
 <em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>
-![](://https://github.com/kerinb/kerinb.github.io/tree/master/imagesme_in_lavaux_grey_vignette_small_square.png&classes=right)
+![](://https://github.com/kerinb/kerinb.github.io/tree/master/imagesme_in_lavaux_grey_vignette_small_square.png)
 
 <br> 
 
