@@ -26,13 +26,14 @@ title: Breandán Kerin's Website
 				<h2>
 					M.A.I, B.A.I and B.A, Computer Engineering <br>
 					University Dublin, Trinity College Dublin, Ireland <br>
-
+				</h2>
+				<h3>
 					<a href="/files/Breandan_CV.pdf" target="_blank">
 						<em>Curriculum Vitae</em>
 					</a> <small> (Updated: Dec, 2019) </small> <br>
 					
 					<em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>
-				</h2>
+				</h3>
 				<br />
 			</p>
 		</td>
