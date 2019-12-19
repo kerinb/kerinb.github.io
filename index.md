@@ -17,12 +17,11 @@ title: Breandán Kerin's Website
 	}
 </style>
 
-# Breandán Kerin
-
 <table width="100%" border="0" cellpadding="5">
 	<tr>
 		<td align="left" valign="center">
 			<p align="justify" style="max-width:500px">
+				<h1>Breandán Kerin</h1>
 
 				M.A.I, B.A.I and B.A, Computer Engineering <br>
 				University Dublin, Trinity College Dublin, Ireland <br>
@@ -45,7 +44,7 @@ title: Breandán Kerin's Website
 
 <hr style="height:10pt; visibility:hidden;" />
 		
-## About Me
+<h2>About Me</h2>
 <p align="justify" style="max-width:600px">
 I am a Masters Graduate in Computer Engineering with a First Class Honours (1.1) in both my Masters and Bachelours.
 I received  both my Masters and Bachelours from <em><a class="tosu" href="https://www.scss.tcd.ie/" target="_blank"> 
@@ -65,7 +64,7 @@ My research was published at the <a href="http://aics2019.datascienceinstitute.i
 I am currently looking for a full time position in a Data Science, Natural Language Processing or Machine Learning Engineer capacity.
 </p>
 
-## Research Interests
+<h2>Research Interests</h2>
 <p align="justify" style="max-width:600px">
 My main academic research interests include, but are not limited to; <br>
 * Natural Language Processing<br>
