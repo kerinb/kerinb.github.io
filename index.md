@@ -17,10 +17,25 @@ title: Breandán Kerin's Website
 	}
 </style>
 
-# Breandán Kerin <br>
-|||
-|---|---|
-|M.A.I, B.A.I and B.A, Computer Engineering <br> University Dublin, Trinity College Dublin, Ireland <br> <a href="/files/Breandan_CV.pdf" target="_blank"><em>Curriculum Vitae</em></a> <small> (Updated: Dec, 2019) </small> <br><em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>|<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;max-width:300px">|
+<table width="1000" border="0" cellpadding="5">
+	<tr>
+		<td align="center" valign="center">
+			# Breandán Kerin <br>
+
+			M.A.I, B.A.I and B.A, Computer Engineering <br>
+			University Dublin, Trinity College Dublin, Ireland <br>
+
+			<a href="/files/Breandan_CV.pdf" target="_blank"><em>Curriculum Vitae</em></a> <small> (Updated: Dec, 2019) </small> <br>
+			<em>Email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>
+			<br />
+		</td>
+		<td align="center" valign="center">
+			<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;max-width:300px">
+			<br />
+		</td>
+	</tr>
+</table>
+
 <br> 
 
 <center> 
