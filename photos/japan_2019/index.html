@@ -23,20 +23,28 @@ title: Breandán's Research
 		display:block;
 	}
 	
+	body {
+		font-family: Verdana, sans-serif;
+		margin: 0;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
 	.row > .column {
 		padding: 0 8px;
 	}
 
 	.row:after {
-		  content: "";
-		  display: table;
-		  clear: both;
+		content: "";
+		display: table;
+		clear: both;
 	}
 
-	/* Create four equal columns that floats next to eachother */
 	.column {
-		  float: left;
-		  width: 25%;
+		float: left;
+		width: 25%;
 	}
 
 	/* The Modal (background) */
@@ -80,9 +88,12 @@ title: Breandán's Research
 		cursor: pointer;
 	}
 
-	/* Hide the slides by default */
 	.mySlides {
 		display: none;
+	}
+
+	.cursor {
+		cursor: pointer;
 	}
 
 	/* Next & previous buttons */
@@ -124,7 +135,10 @@ title: Breandán's Research
 		top: 0;
 	}
 
-	/* Caption text */
+	img {
+		margin-bottom: -4px;
+	}
+
 	.caption-container {
 		text-align: center;
 		background-color: black;
@@ -132,8 +146,8 @@ title: Breandán's Research
 		color: white;
 	}
 
-	img.demo {
-		opacity: 0.6;
+	.demo {
+	  opacity: 0.6;
 	}
 
 	.active,
@@ -275,62 +289,60 @@ title: Breandán's Research
 
     <!-- Thumbnail image controls -->
     <div class="column">
-      <img class="demo" src="/images/japan_2019/matsumoto_castle_3.png" onclick="currentSlide(1)" alt="Nature">
+      <img class="demo" style="width:100%" src="/images/japan_2019/matsumoto_castle_3.png" onclick="currentSlide(1)" alt="Nature">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/matsumoto_castle_3.png" onclick="currentSlide(2)" alt="Snow">
+      <img class="demo" style="width:100%" src="/images/japan_2019/matsumoto_castle_3.png" onclick="currentSlide(2)" alt="Snow">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/hokkaido_ramen_grey.png" onclick="currentSlide(3)" alt="Mountains">
+      <img class="demo" style="width:100%" src="/images/japan_2019/hokkaido_ramen_grey.png" onclick="currentSlide(3)" alt="Mountains">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/kamikochi_log.png" onclick="currentSlide(4)" alt="Lights">
+      <img class="demo" style="width:100%" src="/images/japan_2019/kamikochi_log.png" onclick="currentSlide(4)" alt="Lights">
     </div>
 	
 	<div class="column">
-      <img class="demo" src="/images/japan_2019/cat_cafe_grey_grey.png" onclick="currentSlide(5)" alt="Nature">
+      <img class="demo" style="width:100%" src="/images/japan_2019/cat_cafe_grey_grey.png" onclick="currentSlide(5)" alt="Nature">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/kamikochi_baby_2.JPG" onclick="currentSlide(6)" alt="Snow">
+      <img class="demo" style="width:100%" src="/images/japan_2019/kamikochi_baby_2.JPG" onclick="currentSlide(6)" alt="Snow">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/kamikochi_flower_violet_2.png" onclick="currentSlide(7)" alt="Mountains">
+      <img class="demo" style="width:100%" src="/images/japan_2019/kamikochi_flower_violet_2.png" onclick="currentSlide(7)" alt="Mountains">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/matsumoto_bridge.png" onclick="currentSlide(8)" alt="Lights">
+      <img class="demo" style="width:100%" src="/images/japan_2019/matsumoto_bridge.png" onclick="currentSlide(8)" alt="Lights">
     </div>
 	
 	<div class="column">
-      <img class="demo" src="/images/japan_2019/tokyo_skyline_hotel2.png" onclick="currentSlide(9)" alt="Nature">
+      <img class="demo" style="width:100%" src="/images/japan_2019/tokyo_skyline_hotel2.png" onclick="currentSlide(9)" alt="Nature">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/view_of_mt_kamikochi_2.png" onclick="currentSlide(10)" alt="Snow">
+      <img class="demo" style="width:100%" src="/images/japan_2019/view_of_mt_kamikochi_2.png" onclick="currentSlide(10)" alt="Snow">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/yakedake_mushrooms_2_light_grey.png" onclick="currentSlide(11)" alt="Mountains">
+      <img class="demo" style="width:100%" src="/images/japan_2019/yakedake_mushrooms_2_light_grey.png" onclick="currentSlide(11)" alt="Mountains">
     </div>
 
     <div class="column">
-      <img class="demo" src="/images/japan_2019/yakedake_view.png" onclick="currentSlide(12)" alt="Lights">
+      <img class="demo" style="width:100%" src="/images/japan_2019/yakedake_view.png" onclick="currentSlide(12)" alt="Lights">
     </div>
   </div>
 </div>
 
 <script>
-	// Open the Modal
 	function openModal() {
 		document.getElementById("myModal").style.display = "block";
 	}
 
-	// Close the Modal
 	function closeModal() {
 		document.getElementById("myModal").style.display = "none";
 	}
@@ -338,15 +350,13 @@ title: Breandán's Research
 	var slideIndex = 1;
 	showSlides(slideIndex);
 
-	// Next/previous controls
 	function plusSlides(n) {
 		showSlides(slideIndex += n);
 	}
 
-	// Thumbnail image controls
 	function currentSlide(n) {
 		showSlides(slideIndex = n);
-	}
+	}		
 
 	function showSlides(n) {
 		var i;
