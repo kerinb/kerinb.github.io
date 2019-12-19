@@ -33,7 +33,7 @@ title: Breandán Kerin's Website
 			</p>
 		</td>
 		<td align="center" valign="center">
-			<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;">
+			<img class="myImg" src="/images/me_in_lavaux_grey_vignette_small_square.png" alt="My profile" style="width:100%;max-width:200px">
 			<br />
 		</td>
 	</tr>
