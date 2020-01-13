@@ -67,7 +67,7 @@ My research was published at the <a href="http://aics2019.datascienceinstitute.i
 </p>
 
 <p align="justify" style="max-width:600px">
-I am currently looking for a full time position in a Data Science, Natural Language Processing or Machine Learning Engineer capacity.
+I am currently working in Endeavour Technology LTD. in Dublin, Ireland as a Data Scientist.
 </p>
 
 ## Research Interests
