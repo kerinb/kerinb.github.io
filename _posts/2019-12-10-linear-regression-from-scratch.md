@@ -519,7 +519,7 @@ date: Monday 14th January 2020
 </pre>
 </figure>
 
-![](/files/LinearRegressionBlog/pred_v_y_plot_)sklearn.png)
+![](/files/LinearRegressionBlog/pred_v_y_plot_sklearn.png)
 <br>
 <p>
 	The above plot shows the difference between the actual value of the houses versus the prediction using sklearn.
