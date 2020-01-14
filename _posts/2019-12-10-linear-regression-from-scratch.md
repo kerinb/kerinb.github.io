@@ -405,8 +405,18 @@ date: Monday 14th January 2020
 
 <p>
     As you can see from the 'R2 after training', we have successfully learnned a series of coeffecients that have produced 
-    a relatively high R Squared value, meaning that the learned weights explain 7__% of the variation between the predicted
+    a relatively high R Squared value, meaning that the learned weights explaining 73.64% of the variation between the predicted
     and actual dependent variable. Congratulations, you can now use this to predict the price of your new house in Boston.
+</p>
+
+
+![](/files/LinearRegressionBlog/pred_v_y_plot.png)
+<br>
+<p>
+	The above plot shows the difference between the actual value of the houses versus the prediction. In an ideal world,
+	the scatter plot that you can see above would show a more linear relationship between the data, thus explaining more
+	of the variance in the data. However, since the model doesn't fit to the data 100%, the scatter plot is not producing a 
+	perfect line. 
 </p>
 
 <p>
