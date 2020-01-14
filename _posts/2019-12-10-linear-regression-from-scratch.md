@@ -46,7 +46,7 @@ from sklearn.datasets import load_boston
 from sklearn.metrics import r2_score
 import math
 
-def split_data(x, y, ratio, seed=1):
+def train_test_split(x, y, ratio, seed=1):
 	np.random.seed(seed)
 	indices = np.random.permutation(len(y))
 	index_split = int(np.floor(ratio * len(y)))
@@ -69,7 +69,7 @@ boston_dataset['MEDV'] =  boston.target
 y = boston_dataset.MEDV
 X = boston_dataset.drop(['MEDV'], axis=1)
 
-X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
+X_train, X_test, y_train, y_test = train_test_split(X, y, r, seed=s)
 X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
 X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
 
@@ -80,10 +80,10 @@ losses = []
 prev = math.inf
 
 for n_iter in range(num_iters):
-	err = y_train - X_train.dot(weights)
-	grad = -X_train.T.dot(err) / len(err)
-	loss = np.sqrt(2 * 1/2*np.mean(err**2))
-	weights = weights - gamma * grad
+	error = y_train - X_train.dot(weights)
+	derivative = -X_train.T.dot(error) / len(error)
+	loss = np.sqrt(2 * 1/2*np.mean(error**2))
+	weights = weights - gamma * derivative
 	weights_list.append(weights)
 	losses.append(loss)
 	if(abs(loss - prev) < min_error) :
@@ -293,7 +293,7 @@ params = weights_list[-1]
 17. X = boston_dataset.drop(['MEDV'], axis=1)
 18.
 19. # Split data into training and testing sets
-20. X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
+20. X_train, X_test, y_train, y_test = train_test_split(X, y, r, seed=s)
 21. X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
 22. X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
 23. 
@@ -307,12 +307,12 @@ params = weights_list[-1]
 31.
 32. for n_iter in range(num_iters):
 33. 	# compute loss, gradient and rmse(actual loss)
-34. 	err = y_train - X_train.dot(weights)
-35. 	grad = -X_train.T.dot(err) / len(err)
-36. 	loss = np.sqrt(2 * 1/2*np.mean(err**2))
+34. 	error = y_train - X_train.dot(weights)
+35. 	derivative = -X_train.T.dot(err) / len(error)
+36. 	loss = np.sqrt(2 * 1/2*np.mean(error**2))
 37.
 38. 	# gradient w by descent update
-39. 	weights = weights - gamma * grad
+39. 	weights = weights - gamma * derivative
 40.
 41. 	# store w and loss
 42. 	weights_list.append(weights)
@@ -333,13 +333,14 @@ params = weights_list[-1]
 <p>
 	There were a couple of helper functions that I also implemented to i) split the data into train and test sets, ii)
 	to standardise the data and iii) evaluate the implementation using the R squared measure. The code for these are 
-	shown below:
+	shown below and arent discussed later since they're only helper functions which can be replicated with the 
+	<i>train_test_split</i> method in sklearn:
 </p>
 
 <figure>
 <pre class="brush: python">
 <code>
-53. def split_data(x, y, ratio, seed=1):
+53. def train_test_split(x, y, ratio, seed=1):
 54. 	"""split the dataset based on the split ratio."""
 55. 	# set seed to produce reproducable results
 56. 	np.random.seed(seed)
@@ -366,7 +367,7 @@ params = weights_list[-1]
 <table style="width:100%">
   <tr>
     <th>Operation</th>
-    <th>Explained</th>
+    <th>Operation Explained</th>
   </tr>
   <tr>
     <td>X</td>
@@ -425,55 +426,51 @@ params = weights_list[-1]
 </p>
 
 <p>
-    <b>Lines: 2-6 </b> These import the required libraries for this code to work.
+    <b>Lines: 2 - 6 </b> These import the required libraries for this code to work.
 </p>
 <p>
     <b>Lines: 9 & 10 </b> These are the constants which are used as inputs to our functions and algorithms. <b>
     r</b> is used to define the splitting ratio of our dataset: the training dataset will be 77% of the original 
-    dataset and the testing set will therefore be 33% of the original dataset. <b>s</b> is a seed that we input 
+    dataset and the testing set will therefore be 33%. <b>s</b> is a seed that we input 
     into the numpy's random number generator to ensure that the results obtained here are reproduceable. <b>num_ters
     </b> defines the maximum number of iterations we calculate for this algorithm. <b>min_error</b> is used for 
-    early stopping - in other words, if we have learned the weights to be within the range of min_error, we can stop 
+    early stopping - if we have learned the weights to be within the range of min_error, we can stop 
     training. <b>alpha</b> is the learning rate - this controls how aggressive our steps are in gradient descent.
 </p>
 <p>
-    <b>Lines: 12 - 17 </b> These lines load the Boston housing data from the sklearn datasets, split the data 
-    the dependent and independent datasets.
+    <b>Lines: 13 - 17 </b> These lines load the Boston housing data from the sklearn datasets, split the data into
+    the dependent variable and independent variable datasets.
 </p>
 <p>
-    <b>Lines: 19 - 22</b> This takes our X and y data, splits it into training and testing sub-datasets, 
-    standardises the dependent variables, and then finally adds in a new column that corresponds to X_0, a feature that 
+    <b>Lines: 20 - 22</b> Takes the <b>X</b> and <b>y</b> data, splits them into  thetraining and testing sub-datasets, 
+    standardises the dependent variables, and then finally adds in a new column that corresponds to X_0: a feature that 
     is added only to simplify the maths later.
 </p>
 <p>
-    <b>Lines:  26 - 30</b> This is us simply initialising the variables that will be needed during the learning 
-    process. They will be used to keep track of the weights we are learning and the losses we generate during learning. 
+    <b>Lines:  26 - 30</b>Here we are initialising the variables that will be needed during the learning 
+    process. They will be used to keep track of the weights we are learning and the losses we generate during training. 
 </p>
 <p>
-    <b>Lines: 32</b> Here we simply keep repeating the learning process until we either exit the for loop or we 
-    have learned weights good enough to cause us to stop learning early. 
-</p>
-<p>
-    <b>Lines: 34</b> Here, we make a prediction with <i> X_train.dot(weights)</i> and we compare the result to the 
+    <b>Lines: 34</b> Here, we make a prediction with <i> X_train.dot(weights)</i> (Which corresponds to h_θ (x)) and we compare the result to the 
     actual values in <i>y</i>. This is our error; how wrong our prediction is from the real values. 
 </p>
 <p>
-    <b>Lines: 35</b> We apply the first step required for Gradient Descent, compute the gradient of our cost 
+    <b>Lines: 35</b> We apply the first step required for Gradient Descent, compute the <i>derivative</i> of our cost 
     function. This value will be used later on in updating our weights.
 </p>
 <p>
-    <b>Lines: 36</b> This line keeps track of the Root Mean Square Error (RMSE), the currenty value will be compare 
-    the previous RMSE to determine if we should stop learning early. 
+    <b>Lines: 36</b> Here we're computing and keeping track of the Root Mean Square Error (RMSE) - the loss. 
+	The current loss value will be compared the previous loss value in oreder to determine if we should stop learning early. 
 </p>
 <p>
-    <b>Lines: 38</b> We fainlly update our weights using gradient descent! We incrementally update the original 
-    weights by adding our gradient times the learning rate - This moves our weight by an amount alpha in direction grad.
+    <b>Lines: 39</b> Here we finally update the weights using gradient descent! We incrementally update the original 
+    weights by adding our derivative (or gradient) times the learning rate (alpha) - This moves our weight by an amount alpha in direction of the derivative.
 </p>
 <p>
-    <b>Lines: 40 & 41</b> These two lines keep track of the previous losses and weights that we ahve enountered on 
+    <b>Lines: 42 & 43</b> These two lines keep track of the previous loss and weight values that we have enountered on 
     this learning process. 
 </p>
 <p>
-    <b>Lines: 44 - 46</b> This is where we can stop early. If the difference between our two loses are negligible, 
-    we can stop here, since we probably wont update the models much more after this.
+    <b>Lines: 46 - 48</b> This is where we can stop early. If the difference between our current and previous loses are negligible, 
+    i.e., less then our <i>min_error</i> value, we can stop here since we probably won't update the models much more beyond this point.
 </p>
