@@ -29,9 +29,9 @@ date: Monday 14th January 2020
 	a branch of machine learning that learns from labelled data with known true values.
 </p>
 
-<h3> 
+<h2> 
 	I just came here for the code:
-</h3>
+</h2>
 
 <figure>
 <pre class="brush: python">
@@ -256,9 +256,9 @@ date: Monday 14th January 2020
 	implementing the above theory as code. 
 </p>
 
-<h3>
+<h2>
 	Section 2: Putting Theory into practice: 
-</h3>
+</h2>
 
 <p>
 	Now, imagine that you are considering moving to Boston, MA, and you want to purchase a house. If you, for some strange 
@@ -482,4 +482,45 @@ date: Monday 14th January 2020
 <p>
     <b>Lines: 46 - 48</b> This is where we can stop early. If the difference between our current and previous loses are negligible, 
     i.e., less then our <i>min_error</i> value, we can stop here since we probably won't update the models much more beyond this point.
+</p>
+
+<h2> 
+	That's all well, and good - But how does this actually compare to what's used in industry?
+</h2>
+
+<p>
+	For this, I will simply share the code and results; which again is on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>.
+	This implementation was done using sklearn. 
+</p>
+
+<figure>
+<pre class="brush: python">
+<code>
+1. import numpy as np, math, pandas as pd
+3. from sklearn.datasets import load_boston
+4. from sklearn.metrics import r2_score
+5. from sklearn.linear_model import LinearRegression
+6. from sklearn.model_selection import train_test_split
+7. 
+8.  boston = load_boston()
+9. boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
+10. boston_dataset['MEDV'] =  boston.target
+11. 
+12. y = boston_dataset.MEDV
+13. X  = boston_dataset.drop(['MEDV'], axis=1)
+14. 
+15. # y = boston.target
+16. 
+17. X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+18. 
+19. reg = LinearRegression().fit(X_train, y_train)
+20. print(reg.score(X_test, y_test))
+</code>
+</pre>
+</figure>
+
+![](/files/LinearRegressionBlog/pred_v_y_plot_)sklearn.png)
+<br>
+<p>
+	The above plot shows the difference between the actual value of the houses versus the prediction using sklearn.
 </p>
