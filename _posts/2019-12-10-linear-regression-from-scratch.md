@@ -27,7 +27,7 @@ date: 2019-12-10
 </P>
 
 <p>
-	<bold> Post Summary: </bold> This tutorial covers the topic of Linear Regression (LR) using gradient descent.  
+	<b> Post Summary: </b> This tutorial covers the topic of Linear Regression (LR) using gradient descent.  
 	It’s a simple and very well understood machine learning algorithm. This tutorial will walk through an 
 	implementation of LR from scratch written in Python. LR is a perfect, simple example of supervised machine learning - 
 	a branch of machine learning that learns from labelled data with known true values.
@@ -266,7 +266,7 @@ params = weights_list[-1]
 	reason, do not have access to a real estate agent, but have access to a datset relating to the prices of houses in 
 	Boston and you want to know what sort of house fits within your budget, you could use this to estimate the cost of 
 	your new home! <br><br>
-	<bold>PRECAUTIONARY DISCLAIMER:</bold> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
+	<d>PRECAUTIONARY DISCLAIMER:</b> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
 	simply to illustrate the inner workings of the LR model. 
 </p>
 
@@ -420,60 +420,60 @@ def add_theta_0(x, X):
 	Now that we have the required theory out of the way, and you have (hopefully) read through the code above, we will
 	walk through this code chronologically explaining all steps required to estimate our weights.
 	<br>
-	<bold>Note:</bold> I would recommend opening two tabs on your screen so you can see the code and the walk through
+	<b>Note:</b> I would recommend opening two tabs on your screen so you can see the code and the walk through
 	 togetther while you read!
 </p>
 
 <p>
-    <bold>Lines: 2-6 </bold> These import the required libraries for this code to work.
+    <b>Lines: 2-6 </b> These import the required libraries for this code to work.
 </p>
 <p>
-    <bold>Lines: 9 & 10 </bold> These are the constants which are used as inputs to our functions and algorithms. <bold>
-    r</bold> is used to define the splitting ratio of our dataset: the training dataset will be 77% of the original 
-    dataset and the testing set will therefore be 33% of the original dataset. <bold>s</bold> is a seed that we input 
-    into the numpy's random number generator to ensure that the results obtained here are reproduceable. <bold>num_ters
-    </bold> defines the maximum number of iterations we calculate for this algorithm. <bold>min_error</bold> is used for 
+    <b>Lines: 9 & 10 </b> These are the constants which are used as inputs to our functions and algorithms. <b>
+    r</b> is used to define the splitting ratio of our dataset: the training dataset will be 77% of the original 
+    dataset and the testing set will therefore be 33% of the original dataset. <b>s</b> is a seed that we input 
+    into the numpy's random number generator to ensure that the results obtained here are reproduceable. <b>num_ters
+    </b> defines the maximum number of iterations we calculate for this algorithm. <b>min_error</b> is used for 
     early stopping - in other words, if we have learned the weights to be within the range of min_error, we can stop 
-    training. <bold>alpha</bold> is the learning rate - this controls how aggressive our steps are in gradient descent.
+    training. <b>alpha</b> is the learning rate - this controls how aggressive our steps are in gradient descent.
 </p>
 <p>
-    <bold>Lines: 12 - 17 </bold> These lines load the Boston housing data from the sklearn datasets, split the data 
+    <b>Lines: 12 - 17 </b> These lines load the Boston housing data from the sklearn datasets, split the data 
     the dependent and independent datasets.
 </p>
 <p>
-    <bold>Lines: 19 - 22</bold> This takes our X and y data, splits it into training and testing sub-datasets, 
+    <b>Lines: 19 - 22</b> This takes our X and y data, splits it into training and testing sub-datasets, 
     standardises the dependent variables, and then finally adds in a new column that corresponds to X_0, a feature that 
     is added only to simplify the maths later.
 </p>
 <p>
-    <bold>Lines:  26 - 30</bold> This is us simply initialising the variables that will be needed during the learning 
+    <b>Lines:  26 - 30</b> This is us simply initialising the variables that will be needed during the learning 
     process. They will be used to keep track of the weights we are learning and the losses we generate during learning. 
 </p>
 <p>
-    <bold>Lines: 32</bold> Here we simply keep repeating the learning process until we either exit the for loop or we 
+    <b>Lines: 32</b> Here we simply keep repeating the learning process until we either exit the for loop or we 
     have learned weights good enough to cause us to stop learning early. 
 </p>
 <p>
-    <bold>Lines: 34</bold> Here, we make a prediction with <i> X_train.dot(weights)</i> and we compare the result to the 
+    <b>Lines: 34</b> Here, we make a prediction with <i> X_train.dot(weights)</i> and we compare the result to the 
     actual values in <i>y</i>. This is our error; how wrong our prediction is from the real values. 
 </p>
 <p>
-    <bold>Lines: 35</bold> We apply the first step required for Gradient Descent, compute the gradient of our cost 
+    <b>Lines: 35</b> We apply the first step required for Gradient Descent, compute the gradient of our cost 
     function. This value will be used later on in updating our weights.
 </p>
 <p>
-    <bold>Lines: 36</bold> This line keeps track of the Root Mean Square Error (RMSE), the currenty value will be compare 
+    <b>Lines: 36</b> This line keeps track of the Root Mean Square Error (RMSE), the currenty value will be compare 
     the previous RMSE to determine if we should stop learning early. 
 </p>
 <p>
-    <bold>Lines: 38</bold> We fainlly update our weights using gradient descent! We incrementally update the original 
+    <b>Lines: 38</b> We fainlly update our weights using gradient descent! We incrementally update the original 
     weights by adding our gradient times the learning rate - This moves our weight by an amount alpha in direction grad.
 </p>
 <p>
-    <bold>Lines: 40 & 41</bold> These two lines keep track of the previous losses and weights that we ahve enountered on 
+    <b>Lines: 40 & 41</b> These two lines keep track of the previous losses and weights that we ahve enountered on 
     this learning process. 
 </p>
 <p>
-    <bold>Lines: 44 - 46</bold> This is where we can stop early. If the difference between our two loses are negligible, 
+    <b>Lines: 44 - 46</b> This is where we can stop early. If the difference between our two loses are negligible, 
     we can stop here, since we probably wont update the models much more after this.
 </p>
