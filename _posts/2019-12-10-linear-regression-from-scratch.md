@@ -40,7 +40,6 @@ date: 2019-12-10
 <figure>
 <pre class="brush: python">
 <code>
-
     import numpy as np
     import pandas as pd
     from sklearn.datasets import load_boston
@@ -98,7 +97,7 @@ date: 2019-12-10
 </figure>
 
 <p>
-	The code above can also be found on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>
+	The code above can also be found on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>.
 </p>
 
 <h3>
@@ -122,7 +121,7 @@ date: 2019-12-10
 	corresponding value in the original observed dataset). For example, if we input a dataset with 10 columns in the data,
 	we will have 11 weights that must be learned in order to successfully predict our h_θ value. <br><br>
 	
-	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+⋯+θ_10*x_10</i></center><br><br>
+	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+...+θ_10*x_10</i></center><br><br>
 	
 	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in: <br><br>
 	
@@ -132,7 +131,7 @@ date: 2019-12-10
 	This extra column will be in place where x_0 should be. This means that we have an x column that corresponds to θ_0, 
 	which will result in a more simplified equation:<br><br>
 	
-	<center><i>h_θ (x)= θ*x</i></center><br><br>
+	<center><i>h_θ (x)= θ*x</i></center><br>
 </p>
 
 <p>
@@ -182,9 +181,9 @@ date: 2019-12-10
 	Once we know that we are wrong in our prediction by some value, the next step if to figure out how to minimise this error. 
 	Image our error follows the plot below. We can see that the weights start of at the ‘Random initial Value’ and we want to 
 	try change the weights that minimises the error; also known as the cost. To do this, we take the derivative of the error 
-	function (the mean squared error).<br><br>
+	function (the mean squared error).<br>
 
-	<center><i>error=(prediction-y)^2<i></center><br><br>
+	<center><i>error = (prediction-y)^2<i></center><br><br>
 
 	Or if we were computing this over many training samples at a time, the error function would then be:<br><br>
 
@@ -201,7 +200,7 @@ date: 2019-12-10
 <p>
 	This constant tells us how far we want to move in the direction of the derivative. If 
 	alpha is too large, we could actually diverge, while if alpha is too small, it may take a very long time to converge on 
-	the desired weights. To mathematically define these operations consider the equation(s) below: <br><br>
+	the desired weights. To mathematically define these operations consider the equation(s) below: <br>
 
 	<center><i>θ= θ+alpha*error_deriv<i></center><br><br>
 
