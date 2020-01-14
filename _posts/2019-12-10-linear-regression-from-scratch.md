@@ -60,7 +60,7 @@ date: 2019-12-10
         x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
         return x
     
-    r=0.77; s=1; epsilon = 10e-10
+    r=0.77; s=1; min_error = 10e-10
     num_iters = 10000; gamma = 0.01
     
     boston = load_boston()
@@ -86,7 +86,7 @@ date: 2019-12-10
         weights = weights - gamma * grad
         weights_list.append(weights)
         losses.append(loss)
-        if(abs(loss - prev) < epsilon) :
+        if(abs(loss - prev) < min_error) :
             print("Reached Convergence !")
             break
         prev = loss
@@ -106,10 +106,14 @@ date: 2019-12-10
 
 <p>
 	LR is a statistical model that observes the linear relationships between a dependent variable, y, and a set of independent 
-	variables, X. In a simple LR model, the aim is to model the data in a manner similar to below: <br><br>
-	
-	<center><i>h_θ (x)= θ_0+θ_1*x_1</i></center><br><br>
-	
+	variables, X. In a simple LR model, the aim is to model the data in a manner similar to below:
+</p>
+
+<p>
+	<center><i>h_θ (x)= θ_0+θ_1*x_1</i></center>
+</p>
+
+<p>
 	Where h_θ is the prediction we make using the input data, x, and the weights that are to be learned, θ. X is the 
 	independent variable that we have observed and recorded. θ_0 and θ_1 are the weights or coefficients that want to 
 	learn in order to predict h_θ correctly. 
@@ -119,26 +123,34 @@ date: 2019-12-10
 	Generally, the number of weights we have to learn is equal to the number of
 	dependent variables, X, from the dataset we are using plus one (The plus one here refers to θ_0 which doesn’t have a 
 	corresponding value in the original observed dataset). For example, if we input a dataset with 10 columns in the data,
-	we will have 11 weights that must be learned in order to successfully predict our h_θ value. <br><br>
-	
-	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+...+θ_10*x_10</i></center><br><br>
-	
-	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in: <br><br>
-	
-	<center><i>h_θ (x)= θ_0+ θ*x</i></center><br><br>
-	
+	we will have 11 weights that must be learned in order to successfully predict our h_θ value.
+</p>
+
+<p>	
+	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+...+θ_10*x_10</i></center>
+</p>
+
+<p>
+	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in:
+</p>
+
+<p>
+	<center><i>h_θ (x)= θ_0+ θ*x</i></center>
+</p>
+
+<p>
 	It is also possible to further simplify the notation here by adding in an extra column to the x matrix and the values will be 1.
 	This extra column will be in place where x_0 should be. This means that we have an x column that corresponds to θ_0, 
-	which will result in a more simplified equation:<br><br>
-	
-	<center><i>h_θ (x)= θ*x</i></center><br>
+	which will result in a more simplified equation:
+</p>
+	<center><i>h_θ (x)= θ*x</i></center>
 </p>
 
 <p>
 	With some basic knowledge of maths, we know that the weight θ_0  corresponds to the intercept with the y-axis. In 
 	machine learning, this is generally called the bias, due to the fact that it is added to offset all of the predictions 
 	that are made from the x-axis. The remaining θ values correspond to the slope of the line (in however many dimensions 
-	are present in the data). <br>
+	are present in the data).
 	
 	<img src="files/LinearRegressionBlog/linear_regression_example_plot.png">
 </p>
@@ -181,18 +193,30 @@ date: 2019-12-10
 	Once we know that we are wrong in our prediction by some value, the next step if to figure out how to minimise this error. 
 	Image our error follows the plot below. We can see that the weights start of at the ‘Random initial Value’ and we want to 
 	try change the weights that minimises the error; also known as the cost. To do this, we take the derivative of the error 
-	function (the mean squared error).<br>
+	function (the mean squared error).
+</p>
 
-	<center><i>error = (prediction-y)^2<i></center><br><br>
+<p>
+	<center><i>error = (prediction-y)^2<i></center>
+</p>
 
-	Or if we were computing this over many training samples at a time, the error function would then be:<br><br>
+<p>
+	Or if we were computing this over many training samples at a time, the error function would then be:
+</p>
 
-	<center><i>error=∑_(i=1)^N(prediction-y)^2<i></center><br><br>
+<p>
+	<center><i>error=∑_(i=1)^N(prediction-y)^2<i></center>
+</p>
 
-	So, when we take the derivative of this function we obtain:<br><br>
+<p>
+	So, when we take the derivative of this function we obtain:
+</p>
 
-	<center><i>error derivative=2*(prediction-y)<i></center><br><br>
-	
+<p>
+	<center><i>error derivative=2*(prediction-y)<i></center>
+</p>
+
+<p>
 	This now gives us the direction in which we want to go to reduce the error, and know I will introduce a new term called 
 	alpha, or the learning rate. 
 </p>
@@ -200,12 +224,16 @@ date: 2019-12-10
 <p>
 	This constant tells us how far we want to move in the direction of the derivative. If 
 	alpha is too large, we could actually diverge, while if alpha is too small, it may take a very long time to converge on 
-	the desired weights. To mathematically define these operations consider the equation(s) below: <br>
+	the desired weights. To mathematically define these operations consider the equation(s) below: 
+</p>
 
-	<center><i>θ= θ+alpha*error_deriv<i></center><br><br>
+<p>
+	<center><i>θ= θ+alpha*error_deriv<i></center>
+</p>
 
+<p>
 	Here, we alter the value of the weights by an amount alpha in the direction of error_deriv which should converge on the 
-	minimum value if we have implemented everything correctly.  <br>
+	minimum value if we have implemented everything correctly.
 	
 	<img src="files/LinearRegressionBlog/gradientDescentjpg.png">
 	
@@ -240,7 +268,7 @@ date: 2019-12-10
     import math
     
     # required constants for script
-    r=0.77; s=1; epsilon = 10e-10
+    r=0.77; s=1; min_error = 10e-10
     num_iters = 10000; gamma = 0.01
     
     # Load data 
@@ -277,7 +305,7 @@ date: 2019-12-10
         losses.append(loss)
         
         #Stop earlier if we reached convergence
-        if(abs(loss - prev) < epsilon) :
+        if(abs(loss - prev) < min_error) :
             print("Reached Convergence !")
             break
         prev = loss
@@ -393,8 +421,8 @@ date: 2019-12-10
     r</bold> is used to define the splitting ratio of our dataset: the training dataset will be 77% of the original 
     dataset and the testing set will therefore be 33% of the original dataset. <bold>s</bold> is a seed that we input 
     into the numpy's random number generator to ensure that the results obtained here are reproduceable. <bold>num_ters
-    </bold> defines the maximum number of iterations we calculate for this algorithm. <bold>epsilon</bold> is used for 
-    early stopping - in other words, if we have learned the weights to be within the range of epsilon, we can stop 
+    </bold> defines the maximum number of iterations we calculate for this algorithm. <bold>min_error</bold> is used for 
+    early stopping - in other words, if we have learned the weights to be within the range of min_error, we can stop 
     training. <bold>alpha</bold> is the learning rate - this controls how aggressive our steps are in gradient descent.
 </p>
 <p>
