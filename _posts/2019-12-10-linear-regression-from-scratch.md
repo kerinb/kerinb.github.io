@@ -168,7 +168,11 @@ date: 2019-12-10
 	Once we make this prediction however, we don’t necessarily know if it’s any good. It could be spot on and predicting values
 	very accurately, or more likely, its performing very poorly and is predicting at random. To overcome the issue, we need to
 	alter some aspect of the equation discussed above. Since we can’t update the data to fit with our needs, we must therefore
-	update the weights. The next step required in the LR algorithm is to compute the error, or how far wrong our initial
+	update the weights. 
+</p>
+
+<p>
+	The next step required in the LR algorithm is to compute the error, or how far wrong our initial
 	prediction is from the actual y value: Simply put, we are computing the squared difference between the actual dependent 
 	variable, y, and our previously predicted value h_θ (x). The reason that we square the error is because we want to know 
 	by how much we got it wrong.
@@ -186,7 +190,11 @@ date: 2019-12-10
 	positive. I’m sure some of you are thinking, ‘well, if all we want to do is to force the error to be positive, we can also 
 	use the absolute value!’ which is true. You can. However, there is another reason as to why we use the squared error, 
 	which is that large errors are made even larger and small errors  are made even smaller. The reason for this, is we don’t
-	need to worry hugely about small errors and we really need to worry about large errors. As an analogy, consider you are 
+	need to worry hugely about small errors and we really need to worry about large errors. 
+</p>
+
+<p>
+	As an analogy, consider you are 
 	in work one day and you make two mistakes. Firstly, you spilled your morning coffee in the canteen. This is a small mistake
 	and is easily cleaned with a towel. Secondly, since you didn't have your morning coffee, you're tired and groggy - In a sleepy, 
 	coffee depraved haze you drop a table in the prod. database. The small error of spilling your coffee is insignificant when compared 
@@ -239,7 +247,7 @@ date: 2019-12-10
 	Here, we alter the value of the weights by an amount alpha in the direction of error_deriv which should converge on the 
 	minimum value if we have implemented everything correctly.
 	
-	<img src="files/LinearRegressionBlog/gradientDescentjpg.png">
+	<img src="files/LinearRegressionBlog/gradientDescentjpg.jpg">
 	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
 	small, and we know we should use gradient descent to find the minimum value of the error/cost function we can now start 
@@ -254,7 +262,7 @@ date: 2019-12-10
 	Now, imagine that you are considering moving to Boston, MA, and you want to purchase a house. If you, for some strange 
 	reason, do not have access to a real estate agent, but have access to a datset relating to the prices of houses in 
 	Boston and you want to know what sort of house fits within your budget, you could use this to estimate the cost of 
-	your new home! 
+	your new home! <br>
 	<bold>PRECAUTIONARY DISCLAIMER:</bold> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
 	simply to illustrate the inner workings of the LR model. 
 </p>
