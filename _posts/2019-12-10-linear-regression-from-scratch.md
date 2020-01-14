@@ -274,58 +274,58 @@ params = weights_list[-1]
 <figure>
 <pre class="brush: python">
 <code>
-# Imports
-import numpy as np
-import pandas as pd
-from sklearn.datasets import load_boston
-from sklearn.metrics import r2_score
-import math
-
-# required constants for script
-r=0.77; s=1; min_error = 10e-10
-num_iters = 10000; gamma = 0.01
-
-# Load data 
-boston = load_boston()
-boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
-boston_dataset['MEDV'] =  boston.target
-y = boston_dataset.MEDV
-X = boston_dataset.drop(['MEDV'], axis=1)
-    
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
-X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
-X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
-
-#### START LINEAR REGRESSION ####
-# Define variables to store weights and losses
-init_weights = np.zeros(len(X_train.columns))
-weights_list = [init_weights]
-weights = init_weights
-losses = []
-prev = math.inf
-
-for n_iter in range(num_iters):
-	# compute loss, gradient and rmse(actual loss)
-	err = y_train - X_train.dot(weights)
-	grad = -X_train.T.dot(err) / len(err)
-	loss = np.sqrt(2 * 1/2*np.mean(err**2))
-	
-	# gradient w by descent update
-	weights = weights - gamma * grad
-	
-	# store w and loss
-	weights_list.append(weights)
-	losses.append(loss)
-	
-	#Stop earlier if we reached convergence
-	if(abs(loss - prev) < min_error) :
-		print("Reached Convergence !")
-		break
-	prev = loss
-	
-#Get final weights
-params = weights_list[-1]    
+1. # Imports
+2. import numpy as np
+3. import pandas as pd
+4. from sklearn.datasets import load_boston
+5. from sklearn.metrics import r2_score
+6. import math
+7.
+8. # required constants for script
+9. r=0.77; s=1; min_error = 10e-10
+10. num_iters = 10000; gamma = 0.01
+11.
+12. # Load data 
+13. boston = load_boston()
+14. boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
+15. boston_dataset['MEDV'] =  boston.target
+16. y = boston_dataset.MEDV
+17. X = boston_dataset.drop(['MEDV'], axis=1)
+18.
+19. # Split data into training and testing sets
+20. X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
+21. X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
+22. X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
+23. 
+24. #### START LINEAR REGRESSION ####
+25. # Define variables to store weights and losses
+26. init_weights = np.zeros(len(X_train.columns))
+27. weights_list = [init_weights]
+28. weights = init_weights
+29. losses = []
+30. prev = math.inf
+31.
+32. for n_iter in range(num_iters):
+33. 	# compute loss, gradient and rmse(actual loss)
+34. 	err = y_train - X_train.dot(weights)
+35. 	grad = -X_train.T.dot(err) / len(err)
+36. 	loss = np.sqrt(2 * 1/2*np.mean(err**2))
+37.
+38. 	# gradient w by descent update
+39. 	weights = weights - gamma * grad
+40.
+41. 	# store w and loss
+42. 	weights_list.append(weights)
+43. 	losses.append(loss)
+44.	
+45. 	#Stop earlier if we reached convergence
+46. 	if(abs(loss - prev) < min_error) :
+47. 		print("Reached Convergence !")
+48. 		break
+49. 	prev = loss
+50. 	
+51. #Get final weights
+52. params = weights_list[-1]    
 </code>
 </pre>
 </figure>
@@ -339,25 +339,25 @@ params = weights_list[-1]
 <figure>
 <pre class="brush: python">
 <code>
-def split_data(x, y, ratio, seed=1):
-	"""split the dataset based on the split ratio."""
-	# set seed to produce reproducable results
-	np.random.seed(seed)
-	
-	# generate random indices
-	indices = np.random.permutation(len(y))
-	index_split = int(np.floor(ratio * len(y)))
-	
-	# create split
-	x_train = x.iloc[indices[: index_split]]
-	x_test = x.iloc[indices[index_split:]]
-	y_train = y.iloc[indices[: index_split]]
-	y_test = y.iloc[indices[index_split:]]
-	return x_train, x_test, y_train, y_test
-
-def add_theta_0(x, X):
-	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
-	return x
+53. def split_data(x, y, ratio, seed=1):
+54. 	"""split the dataset based on the split ratio."""
+55. 	# set seed to produce reproducable results
+56. 	np.random.seed(seed)
+57. 	
+58. 	# generate random indices
+59. 	indices = np.random.permutation(len(y))
+60. 	index_split = int(np.floor(ratio * len(y)))
+61. 	
+62. 	# create split
+63. 	x_train = x.iloc[indices[: index_split]]
+64.	    x_test = x.iloc[indices[index_split:]]
+65. 	y_train = y.iloc[indices[: index_split]]
+66. 	y_test = y.iloc[indices[index_split:]]
+67. 	return x_train, x_test, y_train, y_test
+68. 
+69. def add_theta_0(x, X):
+70. 	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
+71. 	return x
 </code>
 </pre>
 </figure>
