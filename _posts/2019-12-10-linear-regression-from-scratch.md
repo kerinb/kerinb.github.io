@@ -27,9 +27,9 @@ date: 2019-12-10
 </P>
 
 <p>
-	Post Summary: This tutorial covers the topic of Linear Regression (LR) using gradient descent to minimise the loss 
-	function.  It’s a simple and very well understood machine learning algorithm. This tutorial will walk through an 
-	implementation of LR from scratch written in Python. LR is a perfect yet simple example of supervised machine learning - 
+	<bold> Post Summary: </bold> This tutorial covers the topic of Linear Regression (LR) using gradient descent.  
+	It’s a simple and very well understood machine learning algorithm. This tutorial will walk through an 
+	implementation of LR from scratch written in Python. LR is a perfect, simple example of supervised machine learning - 
 	a branch of machine learning that learns from labelled data with known true values.
 </p>
 
@@ -40,58 +40,57 @@ date: 2019-12-10
 <figure>
 <pre class="brush: python">
 <code>
-    import numpy as np
-    import pandas as pd
-    from sklearn.datasets import load_boston
-    from sklearn.metrics import r2_score
-    import math
+import numpy as np
+import pandas as pd
+from sklearn.datasets import load_boston
+from sklearn.metrics import r2_score
+import math
 
-    def split_data(x, y, ratio, seed=1):
-        np.random.seed(seed)
-        indices = np.random.permutation(len(y))
-        index_split = int(np.floor(ratio * len(y)))
-        x_train = x.iloc[indices[: index_split]]
-        x_test = x.iloc[indices[index_split:]]
-        y_train = y.iloc[indices[: index_split]]
-        y_test = y.iloc[indices[index_split:]]
-        return x_train, x_test, y_train, y_test
+def split_data(x, y, ratio, seed=1):
+	np.random.seed(seed)
+	indices = np.random.permutation(len(y))
+	index_split = int(np.floor(ratio * len(y)))
+	x_train = x.iloc[indices[: index_split]]
+	x_test = x.iloc[indices[index_split:]]
+	y_train = y.iloc[indices[: index_split]]
+	y_test = y.iloc[indices[index_split:]]
+	return x_train, x_test, y_train, y_test
 
-    def add_theta_0(x, X):
-        x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
-        return x
-    
-    r=0.77; s=1; min_error = 10e-10
-    num_iters = 10000; gamma = 0.01
-    
-    boston = load_boston()
-    boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
-    boston_dataset['MEDV'] =  boston.target
-    y = boston_dataset.MEDV
-    X = boston_dataset.drop(['MEDV'], axis=1)
-    
-    X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
-    X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
-    X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
-    
-    init_weights = np.zeros(len(X_train.columns))
-    weights_list = [init_weights]
-    weights = init_weights
-    losses = []
-    prev = math.inf
-    
-    for n_iter in range(num_iters):
-        err = y_train - X_train.dot(weights)
-        grad = -X_train.T.dot(err) / len(err)
-        loss = np.sqrt(2 * 1/2*np.mean(err**2))
-        weights = weights - gamma * grad
-        weights_list.append(weights)
-        losses.append(loss)
-        if(abs(loss - prev) < min_error) :
-            print("Reached Convergence !")
-            break
-        prev = loss
-    params = weights_list[-1]  
-    
+def add_theta_0(x, X):
+	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
+	return x
+
+r=0.77; s=1; min_error = 10e-10
+num_iters = 10000; gamma = 0.01
+
+boston = load_boston()
+boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
+boston_dataset['MEDV'] =  boston.target
+y = boston_dataset.MEDV
+X = boston_dataset.drop(['MEDV'], axis=1)
+
+X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
+X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
+X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
+
+init_weights = np.zeros(len(X_train.columns))
+weights_list = [init_weights]
+weights = init_weights
+losses = []
+prev = math.inf
+
+for n_iter in range(num_iters):
+	err = y_train - X_train.dot(weights)
+	grad = -X_train.T.dot(err) / len(err)
+	loss = np.sqrt(2 * 1/2*np.mean(err**2))
+	weights = weights - gamma * grad
+	weights_list.append(weights)
+	losses.append(loss)
+	if(abs(loss - prev) < min_error) :
+		print("Reached Convergence !")
+		break
+	prev = loss
+params = weights_list[-1]  
 </code>
 </pre>
 </figure>
@@ -100,9 +99,9 @@ date: 2019-12-10
 	The code above can also be found on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>.
 </p>
 
-<h3>
+<h2>
 	Section 1: Some Preliminary Theory: 
-</h3>
+</h2>
 
 <p>
 	LR is a statistical model that observes the linear relationships between a dependent variable, y, and a set of independent 
@@ -110,7 +109,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>h_θ (x)= θ_0+θ_1*x_1</i></center>
+	<center><i>h_θ (x) = θ_0 + θ_1 * x_1</i></center>
 </p>
 
 <p>
@@ -127,7 +126,7 @@ date: 2019-12-10
 </p>
 
 <p>	
-	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+...+θ_10*x_10</i></center>
+	<center><i>h_θ (x) = θ_0 + θ_1 * x_1 + θ_2 * x_2 + ... + θ_10 * x_10</i></center>
 </p>
 
 <p>
@@ -135,7 +134,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>h_θ (x)= θ_0+ θ*x</i></center>
+	<center><i>h_θ (x) = θ_0 + θ * x</i></center>
 </p>
 
 <p>
@@ -145,7 +144,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>h_θ (x)= θ*x</i></center>
+	<center><i>h_θ (x) = θ * x</i></center>
 </p>
 
 <p>
@@ -211,7 +210,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center> <i> error = (prediction-y)^2 </i> </center>
+	<center> <i> error = ( prediction - y)^2 </i> </center>
 </p>
 
 <p>
@@ -219,7 +218,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center> <i> error=∑_(i=1)^N(prediction-y)^2 </i> </center>
+	<center> <i> error = ∑_(i=1)^N ( prediction - y)^2 </i> </center>
 </p>
 
 <p>
@@ -227,7 +226,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center> <i> error derivative=2*(prediction-y) </i> </center>
+	<center> <i> error_deriv= 2 *( prediction - y) </i> </center>
 </p>
 
 <p>
@@ -242,7 +241,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center> <i> θ= θ+alpha*error_deriv </i> </center>
+	<center> <i> θ = θ + alpha * error_deriv </i> </center>
 </p>
 
 <p>
@@ -266,7 +265,7 @@ date: 2019-12-10
 	Now, imagine that you are considering moving to Boston, MA, and you want to purchase a house. If you, for some strange 
 	reason, do not have access to a real estate agent, but have access to a datset relating to the prices of houses in 
 	Boston and you want to know what sort of house fits within your budget, you could use this to estimate the cost of 
-	your new home! <br>
+	your new home! <br><br>
 	<bold>PRECAUTIONARY DISCLAIMER:</bold> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
 	simply to illustrate the inner workings of the LR model. 
 </p>
@@ -275,60 +274,58 @@ date: 2019-12-10
 <figure>
 <pre class="brush: python">
 <code>
-    
-    # Imports
-    import numpy as np
-    import pandas as pd
-    from sklearn.datasets import load_boston
-    from sklearn.metrics import r2_score
-    import math
-    
-    # required constants for script
-    r=0.77; s=1; min_error = 10e-10
-    num_iters = 10000; gamma = 0.01
-    
-    # Load data 
-    boston = load_boston()
-    boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
-    boston_dataset['MEDV'] =  boston.target
-    y = boston_dataset.MEDV
-    X = boston_dataset.drop(['MEDV'], axis=1)
-    
-    # Split data into training and testing sets
-    X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
-    X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
-    X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
-    
-    #### START LINEAR REGRESSION ####
-    # Define variables to store weights and losses
-    init_weights = np.zeros(len(X_train.columns))
-    weights_list = [init_weights]
-    weights = init_weights
-    losses = []
-    prev = math.inf
-    
-    for n_iter in range(num_iters):
-        # compute loss, gradient and rmse(actual loss)
-        err = y_train - X_train.dot(weights)
-        grad = -X_train.T.dot(err) / len(err)
-        loss = np.sqrt(2 * 1/2*np.mean(err**2))
-        
-        # gradient w by descent update
-        weights = weights - gamma * grad
-        
-        # store w and loss
-        weights_list.append(weights)
-        losses.append(loss)
-        
-        #Stop earlier if we reached convergence
-        if(abs(loss - prev) < min_error) :
-            print("Reached Convergence !")
-            break
-        prev = loss
-        
-    #Get final weights
-    params = weights_list[-1]    
+# Imports
+import numpy as np
+import pandas as pd
+from sklearn.datasets import load_boston
+from sklearn.metrics import r2_score
+import math
 
+# required constants for script
+r=0.77; s=1; min_error = 10e-10
+num_iters = 10000; gamma = 0.01
+
+# Load data 
+boston = load_boston()
+boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
+boston_dataset['MEDV'] =  boston.target
+y = boston_dataset.MEDV
+X = boston_dataset.drop(['MEDV'], axis=1)
+    
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = split_data(X, y, r, seed=s)
+X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
+X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
+
+#### START LINEAR REGRESSION ####
+# Define variables to store weights and losses
+init_weights = np.zeros(len(X_train.columns))
+weights_list = [init_weights]
+weights = init_weights
+losses = []
+prev = math.inf
+
+for n_iter in range(num_iters):
+	# compute loss, gradient and rmse(actual loss)
+	err = y_train - X_train.dot(weights)
+	grad = -X_train.T.dot(err) / len(err)
+	loss = np.sqrt(2 * 1/2*np.mean(err**2))
+	
+	# gradient w by descent update
+	weights = weights - gamma * grad
+	
+	# store w and loss
+	weights_list.append(weights)
+	losses.append(loss)
+	
+	#Stop earlier if we reached convergence
+	if(abs(loss - prev) < min_error) :
+		print("Reached Convergence !")
+		break
+	prev = loss
+	
+#Get final weights
+params = weights_list[-1]    
 </code>
 </pre>
 </figure>
@@ -342,27 +339,25 @@ date: 2019-12-10
 <figure>
 <pre class="brush: python">
 <code>
+def split_data(x, y, ratio, seed=1):
+	"""split the dataset based on the split ratio."""
+	# set seed to produce reproducable results
+	np.random.seed(seed)
+	
+	# generate random indices
+	indices = np.random.permutation(len(y))
+	index_split = int(np.floor(ratio * len(y)))
+	
+	# create split
+	x_train = x.iloc[indices[: index_split]]
+	x_test = x.iloc[indices[index_split:]]
+	y_train = y.iloc[indices[: index_split]]
+	y_test = y.iloc[indices[index_split:]]
+	return x_train, x_test, y_train, y_test
 
-    def split_data(x, y, ratio, seed=1):
-        """split the dataset based on the split ratio."""
-        # set seed to produce reproducable results
-        np.random.seed(seed)
-        
-        # generate random indices
-        indices = np.random.permutation(len(y))
-        index_split = int(np.floor(ratio * len(y)))
-        
-        # create split
-        x_train = x.iloc[indices[: index_split]]
-        x_test = x.iloc[indices[index_split:]]
-        y_train = y.iloc[indices[: index_split]]
-        y_test = y.iloc[indices[index_split:]]
-        return x_train, x_test, y_train, y_test
-    
-    def add_theta_0(x, X):
-        x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
-        return x
-        
+def add_theta_0(x, X):
+	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
+	return x
 </code>
 </pre>
 </figure>
