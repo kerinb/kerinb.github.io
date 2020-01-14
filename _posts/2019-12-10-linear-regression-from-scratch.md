@@ -186,9 +186,11 @@ date: 2019-12-10
 	positive. I’m sure some of you are thinking, ‘well, if all we want to do is to force the error to be positive, we can also 
 	use the absolute value!’ which is true. You can. However, there is another reason as to why we use the squared error, 
 	which is that large errors are made even larger and small errors  are made even smaller. The reason for this, is we don’t
-	need to worry hugely about small errors and we really need to worry about large errors. As Trask described in his 
-	Grokking Deep Learning book: ‘Good parents are like this too. They practically ignore errors if they’re small (breaking 
-	the lead on your pencil) but may go nuclear for big errors (crashing the car)’[1]. 
+	need to worry hugely about small errors and we really need to worry about large errors. As an analogy, consider you are 
+	in work one day and you make two mistakes. Firstly, you spilled your morning coffee in the canteen. This is a small mistake
+	and is easily cleaned with a towel. Secondly, since you didn't have your morning coffee, you're tired and groggy - In a sleepy, 
+	coffee depraved haze you drop a table in the prod. database. The small error of spilling your coffee is insignificant when compared 
+	to dropping a production table in a work database. The big error should be fixed at all costs, while the smaler error can be let go.
 </p>
 
 <p>
