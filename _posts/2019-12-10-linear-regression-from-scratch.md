@@ -97,6 +97,10 @@ date: 2019-12-10
 </pre>
 </figure>
 
+<p>
+	The code above can also be found on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>
+</p>
+
 <h3>
 	Section 1: Some Preliminary Theory: 
 </h3>
@@ -184,11 +188,11 @@ date: 2019-12-10
 
 	Or if we were computing this over many training samples at a time, the error function would then be:<br><br>
 
-	<center><i>error=∑_(i=1)^N(prediction-y)^2 <i></center><br><br>
+	<center><i>error=∑_(i=1)^N(prediction-y)^2<i></center><br><br>
 
 	So, when we take the derivative of this function we obtain:<br><br>
 
-	<center><i>error derivative=2*(prediction-y) <i></center><br><br>
+	<center><i>error derivative=2*(prediction-y)<i></center><br><br>
 	
 	This now gives us the direction in which we want to go to reduce the error, and know I will introduce a new term called 
 	alpha, or the learning rate. 
