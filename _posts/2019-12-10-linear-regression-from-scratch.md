@@ -1,12 +1,8 @@
 ---
 layout: post
-title: "Linear Regression "
-date: 2019-12-10
+title: "Linear Regression from Scratch in Python "
+date: Monday 14th January 2020
 ---
-
-<h1> 
-	Linear Regression from Scratch - Python
-</h1>
 
 <p>
 	Requirements for this tutorial:
@@ -40,57 +36,57 @@ date: 2019-12-10
 <figure>
 <pre class="brush: python">
 <code>
-import numpy as np
-import pandas as pd
-from sklearn.datasets import load_boston
-from sklearn.metrics import r2_score
-import math
-
-def train_test_split(x, y, ratio, seed=1):
-	np.random.seed(seed)
-	indices = np.random.permutation(len(y))
-	index_split = int(np.floor(ratio * len(y)))
-	x_train = x.iloc[indices[: index_split]]
-	x_test = x.iloc[indices[index_split:]]
-	y_train = y.iloc[indices[: index_split]]
-	y_test = y.iloc[indices[index_split:]]
-	return x_train, x_test, y_train, y_test
-
-def add_theta_0(x, X):
-	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
-	return x
-
-r=0.77; s=1; min_error = 10e-10
-num_iters = 10000; gamma = 0.01
-
-boston = load_boston()
-boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
-boston_dataset['MEDV'] =  boston.target
-y = boston_dataset.MEDV
-X = boston_dataset.drop(['MEDV'], axis=1)
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, r, seed=s)
-X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
-X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
-
-init_weights = np.zeros(len(X_train.columns))
-weights_list = [init_weights]
-weights = init_weights
-losses = []
-prev = math.inf
-
-for n_iter in range(num_iters):
-	error = y_train - X_train.dot(weights)
-	derivative = -X_train.T.dot(error) / len(error)
-	loss = np.sqrt(2 * 1/2*np.mean(error**2))
-	weights = weights - gamma * derivative
-	weights_list.append(weights)
-	losses.append(loss)
-	if(abs(loss - prev) < min_error) :
-		print("Reached Convergence !")
-		break
-	prev = loss
-params = weights_list[-1]  
+1. import numpy as np
+2. import pandas as pd
+3. from sklearn.datasets import load_boston
+4. from sklearn.metrics import r2_score
+5. import math
+6. 
+7. def train_test_split(x, y, ratio, seed=1):
+8. 	    np.random.seed(seed)
+9.  	indices = np.random.permutation(len(y))
+10. 	index_split = int(np.floor(ratio * len(y)))
+11. 	x_train = x.iloc[indices[: index_split]]
+12. 	x_test = x.iloc[indices[index_split:]]
+13. 	y_train = y.iloc[indices[: index_split]]
+14. 	y_test = y.iloc[indices[index_split:]]
+15. 	return x_train, x_test, y_train, y_test
+16.
+17. def add_theta_0(x, X):
+18. 	x["INTERCEPT"] = pd.Series(np.ones(X.shape[0]))
+19. 	return x
+20.
+21. r=0.77; s=1; min_error = 10e-10
+22. num_iters = 10000; gamma = 0.01
+23.
+24. boston = load_boston()
+25. boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
+26. boston_dataset['MEDV'] =  boston.target
+27. y = boston_dataset.MEDV
+28. X = boston_dataset.drop(['MEDV'], axis=1)
+29.
+30. X_train, X_test, y_train, y_test = train_test_split(X, y, r, seed=s)
+31. X_train = add_theta_0((X_train - X_train.mean(axis=0))/ X_train.std(axis=0), X)
+32. X_test = add_theta_0((X_test - X_test.mean(axis=0))/ X_test.std(axis=0), X)
+33.
+34. init_weights = np.zeros(len(X_train.columns))
+35. weights_list = [init_weights]
+36. weights = init_weights
+37. losses = []
+38 prev = math.inf
+39.
+40. for n_iter in range(num_iters):
+41. 	error = y_train - X_train.dot(weights)
+42. 	derivative = -X_train.T.dot(error) / len(error)
+43. 	loss = np.sqrt(2 * 1/2*np.mean(error**2))
+44. 	weights = weights - gamma * derivative
+45. 	weights_list.append(weights)
+46. 	losses.append(loss)
+47. 	if(abs(loss - prev) < min_error) :
+48. 		print("Reached Convergence !")
+49. 		break
+50. 	prev = loss
+51. params = weights_list[-1]  
 </code>
 </pre>
 </figure>
@@ -156,6 +152,7 @@ params = weights_list[-1]
 </p>
 	
 ![<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>](/files/LinearRegressionBlog/Linear_regression.png)
+<br><br>
 <a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>
 
 <p>
@@ -250,6 +247,7 @@ params = weights_list[-1]
 </p>
 	
 ![<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>](/files/LinearRegressionBlog/gradientDescentjpg.jpg)
+<br><br>
 <a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>
 <p>	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
