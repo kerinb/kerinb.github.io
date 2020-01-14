@@ -156,7 +156,7 @@ date: 2019-12-10
 	<br>
 </p>
 	
-![](files/LinearRegressionBlog/linear_regression_example_plot.png)
+![](/files/LinearRegressionBlog/linear_regression_example_plot.png)
 
 <p>
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
@@ -249,7 +249,7 @@ date: 2019-12-10
 	minimum value if we have implemented everything correctly.
 </p>
 	
-![](files/LinearRegressionBlog/gradientDescentjpg.jpg)
+![](/files/LinearRegressionBlog/gradientDescentjpg.jpg)
 
 <p>	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
