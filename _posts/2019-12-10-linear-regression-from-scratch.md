@@ -143,6 +143,8 @@ date: 2019-12-10
 	This extra column will be in place where x_0 should be. This means that we have an x column that corresponds to θ_0, 
 	which will result in a more simplified equation:
 </p>
+
+<p>
 	<center><i>h_θ (x)= θ*x</i></center>
 </p>
 
@@ -151,7 +153,7 @@ date: 2019-12-10
 	machine learning, this is generally called the bias, due to the fact that it is added to offset all of the predictions 
 	that are made from the x-axis. The remaining θ values correspond to the slope of the line (in however many dimensions 
 	are present in the data).
-	
+	<br>
 	<img src="files/LinearRegressionBlog/linear_regression_example_plot.png">
 </p>
 
@@ -159,7 +161,7 @@ date: 2019-12-10
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
 	weights that can be used to estimate the dependent variable y - visually, the learned weights are used to plot the red
 	line and the dependent variable is plotted in blue. In order to learn these weights, we first need to make a prediction.
-	The equation used to make this was described above and called h_θ (x): The prediction function. 
+	The equation used to make this was described above and called h_θ (x) - The prediction function. 
 </p>
 
 <p>
@@ -197,7 +199,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>error = (prediction-y)^2<i></center>
+	<center> <i> error = (prediction-y)^2 </i> </center>
 </p>
 
 <p>
@@ -205,7 +207,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>error=∑_(i=1)^N(prediction-y)^2<i></center>
+	<center> <i> error=∑_(i=1)^N(prediction-y)^2 </i> </center>
 </p>
 
 <p>
@@ -213,7 +215,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>error derivative=2*(prediction-y)<i></center>
+	<center> <i> error derivative=2*(prediction-y) </i> </center>
 </p>
 
 <p>
@@ -228,7 +230,7 @@ date: 2019-12-10
 </p>
 
 <p>
-	<center><i>θ= θ+alpha*error_deriv<i></center>
+	<center> <i> θ= θ+alpha*error_deriv </i> </center>
 </p>
 
 <p>
