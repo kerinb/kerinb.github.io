@@ -156,7 +156,7 @@ date: 2019-12-10
 	<br>
 </p>
 	
-![<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>](/files/LinearRegressionBlog/linear_regression_example_plot.png)
+<center>![<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>](/files/LinearRegressionBlog/linear_regression_example_plot.png)</center>
 
 <p>
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
@@ -249,7 +249,7 @@ date: 2019-12-10
 	minimum value if we have implemented everything correctly.
 </p>
 	
-![<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>](/files/LinearRegressionBlog/gradientDescentjpg.jpg)
+<center>![<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>](/files/LinearRegressionBlog/gradientDescentjpg.jpg)</center>
 
 <p>	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
