@@ -1,8 +1,13 @@
 ---
 layout: post
-title: "Linear Regression from Scratch in Python "
+title: "Linear Regression tutorial from Scratch in Python "
 date: Monday 14th January 2020
 ---
+
+<meta charset="UTF-8">
+<meta name="description" content="Linear Regression tutorial in python from scratch">
+<meta name="keywords" content="Python, Machine Learning, Linear Regression, Tutorial, Tutorial from scratch">
+<meta name="author" content="Breandán Kerin">
 
 <p>
 	<b>Requirements for this tutorial: </b>

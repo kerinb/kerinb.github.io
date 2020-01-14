@@ -4,6 +4,11 @@ title: "K-Nearest Neirghbours from Scratch in Python "
 date: Monday 14th January 2020
 ---
 
+<meta charset="UTF-8">
+<meta name="description" content="K-Nearest NeighboursRegression tutorial in python from scratch">
+<meta name="keywords" content="Python, Machine Learning, KNN, k nearest neighbours, Tutorial, Tutorial from scratch">
+<meta name="author" content="Breandán Kerin">
+
 <p>
 	<b>Requirements for this tutorial: </b>
 	<ol>

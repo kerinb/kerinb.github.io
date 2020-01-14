@@ -72,7 +72,7 @@ I am currently working in Endeavour Technology LTD. in Dublin, Ireland as a Data
 
 ## Research Interests
 <p align="justify" style="max-width:600px">
-My main academic research interests include, but are not limited to; <br>
+My main areas of interest include, but are not limited to; <br>
 * Natural Language Processing<br>
 * Machine Learning and Deep Learning<br>
 * User Profing <br>
