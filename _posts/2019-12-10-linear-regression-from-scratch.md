@@ -154,7 +154,8 @@ date: 2019-12-10
 	that are made from the x-axis. The remaining θ values correspond to the slope of the line (in however many dimensions 
 	are present in the data).
 	<br>
-	<img src="files/LinearRegressionBlog/linear_regression_example_plot.png">
+	
+	![](files/LinearRegressionBlog/linear_regression_example_plot.png)
 </p>
 
 <p>
@@ -247,7 +248,7 @@ date: 2019-12-10
 	Here, we alter the value of the weights by an amount alpha in the direction of error_deriv which should converge on the 
 	minimum value if we have implemented everything correctly.
 	
-	<img src="files/LinearRegressionBlog/gradientDescentjpg.jpg">
+	![](files/LinearRegressionBlog/gradientDescentjpg.jpg)
 	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
 	small, and we know we should use gradient descent to find the minimum value of the error/cost function we can now start 
