@@ -156,7 +156,7 @@ params = weights_list[-1]
 </p>
 	
 ![<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>](/files/LinearRegressionBlog/Linear_regression.png)
-*<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>*
+<centre> *<a href='https://de.wikipedia.org/wiki/Lineare_Einfachregression#/media/Datei:Linear_regression.svg'>Image Source</a>* </centre>
 
 <p>
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
@@ -250,7 +250,7 @@ params = weights_list[-1]
 </p>
 	
 ![<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>](/files/LinearRegressionBlog/gradientDescentjpg.jpg)
-*<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>*
+<centre> *<a href='https://miro.medium.com/max/1200/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg'>Image Source</a>* </center>
 <p>	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
 	small, and we know we should use gradient descent to find the minimum value of the error/cost function we can now start 
