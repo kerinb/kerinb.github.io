@@ -96,9 +96,6 @@ date: 2019-12-10
 </code>
 </pre>
 </figure>
-</p>
-
-<br>
 
 <h3>
 	Section 1: Some Preliminary Theory: 
@@ -106,35 +103,41 @@ date: 2019-12-10
 
 <p>
 	LR is a statistical model that observes the linear relationships between a dependent variable, y, and a set of independent 
-	variables, X. In a simple LR model, the aim is to model the data in a manner similar to below: <br>
+	variables, X. In a simple LR model, the aim is to model the data in a manner similar to below: <br><br>
 	
-	<i>h_θ (x)= θ_0+θ_1*x_1</i><br>
+	<center><i>h_θ (x)= θ_0+θ_1*x_1</i></center><br><br>
 	
 	Where h_θ is the prediction we make using the input data, x, and the weights that are to be learned, θ. X is the 
 	independent variable that we have observed and recorded. θ_0 and θ_1 are the weights or coefficients that want to 
-	learn in order to predict h_θ correctly. Generally, the number of weights we have to learn is equal to the number of
+	learn in order to predict h_θ correctly. 
+</p>
+
+<p>
+	Generally, the number of weights we have to learn is equal to the number of
 	dependent variables, X, from the dataset we are using plus one (The plus one here refers to θ_0 which doesn’t have a 
 	corresponding value in the original observed dataset). For example, if we input a dataset with 10 columns in the data,
-	we will have 11 weights that must be learned in order to successfully predict our h_θ value. <br>
+	we will have 11 weights that must be learned in order to successfully predict our h_θ value. <br><br>
 	
-	<i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+⋯+θ_10*x_10</i><br>
+	<center><i>h_θ (x)= θ_0+θ_1*x_1+θ_2*x_2+⋯+θ_10*x_10</i></center><br><br>
 	
-	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in: <br>
+	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in: <br><br>
 	
-	<i>h_θ (x)= θ_0+ θ*x</i><br>
+	<center><i>h_θ (x)= θ_0+ θ*x</i></center><br><br>
 	
 	It is also possible to further simplify the notation here by adding in an extra column to the x matrix and the values will be 1.
 	This extra column will be in place where x_0 should be. This means that we have an x column that corresponds to θ_0, 
-	which will result in a more simplified equation:<br>
+	which will result in a more simplified equation:<br><br>
 	
-	<i>h_θ (x)= θ*x</i><br>
-	
+	<center><i>h_θ (x)= θ*x</i></center><br><br>
+</p>
+
+<p>
 	With some basic knowledge of maths, we know that the weight θ_0  corresponds to the intercept with the y-axis. In 
 	machine learning, this is generally called the bias, due to the fact that it is added to offset all of the predictions 
 	that are made from the x-axis. The remaining θ values correspond to the slope of the line (in however many dimensions 
 	are present in the data). <br>
 	
-	<img src="files/LinearRegressionBlog/linear_regression_example.png">
+	<img src="files/LinearRegressionBlog/linear_regression_example_plot.png">
 </p>
 
 <p>
@@ -168,36 +171,40 @@ date: 2019-12-10
 	which is that large errors are made even larger and small errors  are made even smaller. The reason for this, is we don’t
 	need to worry hugely about small errors and we really need to worry about large errors. As Trask described in his 
 	Grokking Deep Learning book: ‘Good parents are like this too. They practically ignore errors if they’re small (breaking 
-	the lead on your pencil) but may go nuclear for big errors (crashing the car)’[REFERENCE]. 
+	the lead on your pencil) but may go nuclear for big errors (crashing the car)’[1]. 
 </p>
 
 <p>
 	Once we know that we are wrong in our prediction by some value, the next step if to figure out how to minimise this error. 
 	Image our error follows the plot below. We can see that the weights start of at the ‘Random initial Value’ and we want to 
 	try change the weights that minimises the error; also known as the cost. To do this, we take the derivative of the error 
-	function (the mean squared error).<br>
+	function (the mean squared error).<br><br>
 
-	<i>error=(prediction-y)^2<i><br>
+	<center><i>error=(prediction-y)^2<i></center><br><br>
 
-	Or if we were computing this over many training samples at a time, the error function would then be:
+	Or if we were computing this over many training samples at a time, the error function would then be:<br><br>
 
-	<i>error=∑_(i=1)^N(prediction-y)^2 <i><br>
+	<center><i>error=∑_(i=1)^N(prediction-y)^2 <i></center><br><br>
 
-	So, when we take the derivative of this function we obtain:<br>
+	So, when we take the derivative of this function we obtain:<br><br>
 
-	<i>error derivative=2*(prediction-y) <i><br>
-
+	<center><i>error derivative=2*(prediction-y) <i></center><br><br>
+	
 	This now gives us the direction in which we want to go to reduce the error, and know I will introduce a new term called 
-	alpha, or the learning rate. And this constant tells us how far we want to move in the direction of the derivative. If 
-	alpha is too large, we could actually diverge, while if alpha is too small, it may take a very long time to converge on 
-	the desired weights. To mathematically define these operations consider the equation(s) below: <br>
+	alpha, or the learning rate. 
+</p>
 
-	<i>θ= θ+alpha*error_deriv<i><br>
+<p>
+	This constant tells us how far we want to move in the direction of the derivative. If 
+	alpha is too large, we could actually diverge, while if alpha is too small, it may take a very long time to converge on 
+	the desired weights. To mathematically define these operations consider the equation(s) below: <br><br>
+
+	<center><i>θ= θ+alpha*error_deriv<i></center><br><br>
 
 	Here, we alter the value of the weights by an amount alpha in the direction of error_deriv which should converge on the 
-	minimum value if we have implemented everything correctly.  
+	minimum value if we have implemented everything correctly.  <br>
 	
-	<img src="files/LinearRegressionBlog/gradientDescent.png">
+	<img src="files/LinearRegressionBlog/gradientDescentjpg.png">
 	
 	So, now we know how we want to make our prediction, and we know that we want to find the best values of θ that will keep our error 
 	small, and we know we should use gradient descent to find the minimum value of the error/cost function we can now start 
