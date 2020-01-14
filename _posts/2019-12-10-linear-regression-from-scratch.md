@@ -519,6 +519,7 @@ date: Monday 14th January 2020
 </pre>
 </figure>
 
+
 ![](/files/LinearRegressionBlog/pred_v_y_plot_sklearn.png)
 <br>
 <p>
