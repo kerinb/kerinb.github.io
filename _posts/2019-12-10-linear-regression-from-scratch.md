@@ -5,7 +5,7 @@ date: Monday 14th January 2020
 ---
 
 <p>
-	Requirements for this tutorial:
+	<b>Requirements for this tutorial: </b>
 	<ol>
 		<li> 
 			Python
@@ -24,7 +24,7 @@ date: Monday 14th January 2020
 
 <p>
 	<b> Post Summary: </b> This tutorial covers the topic of Linear Regression (LR) using gradient descent.  
-	It’s a simple and very well understood machine learning algorithm. This tutorial will walk through an 
+	It’s a simple and very widely understood machine learning algorithm. This tutorial will walk through an 
 	implementation of LR from scratch written in Python. LR is a perfect, simple example of supervised machine learning - 
 	a branch of machine learning that learns from labelled data with known true values.
 </p>
@@ -73,7 +73,7 @@ date: Monday 14th January 2020
 35. weights_list = [init_weights]
 36. weights = init_weights
 37. losses = []
-38 prev = math.inf
+38. prev = math.inf
 39.
 40. for n_iter in range(num_iters):
 41. 	error = y_train - X_train.dot(weights)
@@ -109,7 +109,7 @@ date: Monday 14th January 2020
 </p>
 
 <p>
-	Where h_θ is the prediction we make using the input data, x, and the weights that are to be learned, θ. X is the 
+	This is known as a simple linear regression, where h_θ is the prediction we make using the input data, x, and the weights that are to be learned, θ. X is the 
 	independent variable that we have observed and recorded. θ_0 and θ_1 are the weights or coefficients that want to 
 	learn in order to predict h_θ correctly. 
 </p>
@@ -126,6 +126,7 @@ date: Monday 14th January 2020
 </p>
 
 <p>
+	A linear regression model with many independent variables is either known as multiple LR or Polynomial LR. 
 	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in:
 </p>
 
