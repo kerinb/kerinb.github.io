@@ -266,7 +266,7 @@ params = weights_list[-1]
 	reason, do not have access to a real estate agent, but have access to a datset relating to the prices of houses in 
 	Boston and you want to know what sort of house fits within your budget, you could use this to estimate the cost of 
 	your new home! <br><br>
-	<d>PRECAUTIONARY DISCLAIMER:</b> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
+	<b>Precautionary disclaimer:</b> Do not use this tutorial as a means of valuating the price of real houses! This tutorial is 
 	simply to illustrate the inner workings of the LR model. 
 </p>
 
