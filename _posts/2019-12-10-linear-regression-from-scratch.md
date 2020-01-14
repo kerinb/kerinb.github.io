@@ -29,6 +29,11 @@ date: Monday 14th January 2020
 	a branch of machine learning that learns from labelled data with known true values.
 </p>
 
+<p>
+	<b>Note:</b> While im in the process of setting up a comments section on the tutorial/blog pages, please feel free
+	to provide feed back via my <em>email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>
+</p>
+
 <h2> 
 	I just came here for the code:
 </h2>
