@@ -131,8 +131,8 @@ date: Monday 14th January 2020
 	Generally, the number of weights we have to learn is equal to the number of
 	independent variables in <i>X</i> from the dataset we are using, plus one*. 
 	For example, if we input a dataset with 10 columns in the data,
-	we will have 11 weights that must be learned in order to successfully predict our <i>h_θ</i> value.
-	<i>The plus one here refers to θ_0, which doesn’t have a corresponding value in the original observed dataset).</i>
+	we will have 11 weights that must be learned in order to successfully predict our <i>h_θ</i> value.<br>
+	<i>* The plus one here refers to θ_0, which doesn’t have a corresponding value in the original observed dataset.</i>
 </p>
 
 <p>	
@@ -141,7 +141,7 @@ date: Monday 14th January 2020
 
 <p>
 	A linear regression model with many independent variables is either known as multiple LR or Polynomial LR. 
-	Note that the x’s and θ’s can be written more concisely using linear algebra notation. This will result in:
+	Note that the <i>X</i>’s and <i>θ</i>’s can be written more concisely using linear algebra notation. This will result in:
 </p>
 
 <p>
@@ -150,7 +150,7 @@ date: Monday 14th January 2020
 
 <p>
 	It is also possible to further simplify the notation here by adding in an extra column to the x matrix and the values will be 1.
-	This extra column will be in place where x_0 should be. This means that we have an x column that corresponds to θ_0, 
+	This extra column will be in place where <i>X_0</i> should be. This means that we have an <i>X</i> column that corresponds to <i>θ_0</i>, 
 	which will result in a more simplified equation:
 </p>
 
@@ -159,9 +159,9 @@ date: Monday 14th January 2020
 </p>
 
 <p>
-	With some basic knowledge of maths, we know that the weight θ_0  corresponds to the intercept with the y-axis. In 
+	With some basic knowledge of maths, we know that the weight <i>θ_0</i>  corresponds to the intercept with the y-axis. In 
 	machine learning, this is generally called the bias, due to the fact that it is added to offset all of the predictions 
-	that are made from the x-axis. The remaining θ values correspond to the slope of the line (in however many dimensions 
+	that are made from the x-axis. The remaining <i>θ</i> values correspond to the slope of the line (in however many dimensions 
 	are present in the data).
 	<br>
 </p>
@@ -174,7 +174,7 @@ date: Monday 14th January 2020
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
 	weights that can be used to estimate the dependent variable y - visually, the learned weights are used to plot the red
 	line and the dependent variable is plotted in blue. In order to learn these weights, we first need to make a prediction.
-	The equation used to make this was described above and called h_θ (x) - The prediction function. 
+	The equation used to make this was described above and called <i>h_θ (x)</i> - The prediction function. 
 </p>
 
 <p>
@@ -187,7 +187,7 @@ date: Monday 14th January 2020
 <p>
 	The next step required in the LR algorithm is to compute the error, or how far wrong our initial
 	prediction is from the actual y value: Simply put, we are computing the squared difference between the actual dependent 
-	variable, y, and our previously predicted value h_θ (x). The reason that we square the error is because we want to know 
+	variable, <i>y</i>, and our previously predicted value <i>h_θ (x)</i>. The reason that we square the error is because we want to know 
 	by how much we got it wrong.
 </p>
 
