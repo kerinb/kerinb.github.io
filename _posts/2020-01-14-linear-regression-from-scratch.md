@@ -172,7 +172,7 @@ date: Monday 14th January 2020
 
 <p>
 	From the above image, we can visually understand what we are trying to achieve with LR: To find the best values for the 
-	weights that can be used to estimate the dependent variable y - visually, the learned weights are used to plot the red
+	weights that can be used to estimate the dependent variable <i>y</i> - visually, the learned weights are used to plot the red
 	line and the dependent variable is plotted in blue. In order to learn these weights, we first need to make a prediction.
 	The equation used to make this was described above and called <i>h_θ (x)</i> - The prediction function. 
 </p>
