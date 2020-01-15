@@ -30,19 +30,21 @@ date: Monday 14th January 2020
 <p>
 	<b> Post Summary: </b> This tutorial covers the topic of Linear Regression (LR) using gradient descent.  
 	It’s a simple and very widely understood machine learning algorithm. This tutorial will walk through an 
-	implementation of LR from scratch written in Python. LR is a perfect, simple example of supervised machine learning - 
-	a branch of machine learning that learns from labelled data with known true values.
+	implementation of LR from scratch written in Python. LR is a simple example of a supervised machine learning technique. Supervised learning 
+	is a branch of machine learning that learns from labelled data with known true values.
 </p>
 
 <p>
-	<b>Note:</b> While im in the process of setting up a comments section on the tutorial/blog pages, please feel free
-	to provide feed back via my </em><a href="mailto:b.m.kerin96@gmail.com">email</a>
+	<b>Note:</b> While I'm in the process of setting up a comments section on the tutorial/blog pages, please feel free
+	to provide feedback via my <a href="mailto:b.m.kerin96@gmail.com">email</a>
+	<!-- NOTE: add an email form instead of a hyperlink to an email address -->
 </p>
 
 <h2> 
 	I just came here for the code:
 </h2>
 
+<!-- NOTE - this would look better if formatted with colours etc. though that may involve CSS -->
 <figure>
 <pre class="brush: python">
 <code>
@@ -69,7 +71,7 @@ date: Monday 14th January 2020
 21. r=0.77; s=1; min_error = 10e-10
 22. num_iters = 10000; gamma = 0.01
 23.
-24. boston = load_boston()
+24. boston = load_boston()99
 25. boston_dataset = pd.DataFrame(boston.data, columns=boston.feature_names)
 26. boston_dataset['MEDV'] =  boston.target
 27. y = boston_dataset.MEDV
@@ -102,16 +104,16 @@ date: Monday 14th January 2020
 </figure>
 
 <p>
-	The code above can also be found on my github <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>here</a>.
+	The code above can also be found on my <a href='https://github.com/kerinb/CodeBlogRepo/tree/master/LinearRegressionBlogCode'>Github</a>.
 </p>
 
 <h2>
-	Section 1: Some Preliminary Theory: 
+	Section 1: Some Preliminary Theory
 </h2>
 
 <p>
-	LR is a statistical model that observes the linear relationships between a dependent variable, y, and a set of independent 
-	variables, X. In a simple LR model, the aim is to model the data in a manner similar to below:
+	LR is a statistical model which observes the linear relationships between a dependent variable <i>y</i>, and a set of independent 
+	variables <i>X</i>. In a simple LR model, the aim is to model the data in a manner according to the following equation:
 </p>
 
 <p>
@@ -119,16 +121,18 @@ date: Monday 14th January 2020
 </p>
 
 <p>
-	This is known as a simple linear regression, where h_θ is the prediction we make using the input data, x, and the weights that are to be learned, θ. X is the 
-	independent variable that we have observed and recorded. θ_0 and θ_1 are the weights or coefficients that want to 
-	learn in order to predict h_θ correctly. 
+	where <i>h_θ</i> is the prediction we make using the input data <i>X</i>, and the weights that are to be learned, <i>θ</i>. 
+	<i>X</i> is the independent variable that we have observed and recorded. <i>θ_0</i> and <i>θ_1</i> are the weights or coefficients that we want to 
+	learn in order to predict <i>h_θ</i> correctly. 
+	This is known as a simple linear regression. 
 </p>
 
 <p>
 	Generally, the number of weights we have to learn is equal to the number of
-	dependent variables, X, from the dataset we are using plus one (The plus one here refers to θ_0 which doesn’t have a 
-	corresponding value in the original observed dataset). For example, if we input a dataset with 10 columns in the data,
-	we will have 11 weights that must be learned in order to successfully predict our h_θ value.
+	independent variables in <i>X</i> from the dataset we are using, plus one*. 
+	For example, if we input a dataset with 10 columns in the data,
+	we will have 11 weights that must be learned in order to successfully predict our <i>h_θ</i> value.
+	<i>The plus one here refers to θ_0, which doesn’t have a corresponding value in the original observed dataset).</i>
 </p>
 
 <p>	
