@@ -36,7 +36,7 @@ date: Monday 14th January 2020
 
 <p>
 	<b>Note:</b> While im in the process of setting up a comments section on the tutorial/blog pages, please feel free
-	to provide feed back via my <em>email: </em><a href="mailto:b.m.kerin96@gmail.com">b.m.kerin96@gmail.com</a>
+	to provide feed back via my </em><a href="mailto:b.m.kerin96@gmail.com">email</a>
 </p>
 
 <h2> 
