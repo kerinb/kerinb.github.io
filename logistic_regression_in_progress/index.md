@@ -24,6 +24,9 @@ date: Monday 14th January 2020
 		<li> 
 			Sci-kit Learn (sklearn)
 		</li>
+		<li> 
+			MatPlotLib
+		</li>
 	</ol>
 </P>
 
@@ -149,10 +152,22 @@ date: Monday 14th January 2020
 
 <p>
 	The difference between Linear Regression and LogReg is with our prediction and loss functions. 
-	For Linear Regression we want to make a prediction using a function similar to:<br>
+	For Linear Regression we want to make a prediction using a function similar to:
+</p>
+
+<p>
 	<center><i>h_θ (x) = θ * x</i></center> <br>
+</p>
+
+<p>
 	And we will use the Mean Square Loss function as our loss function:<br>
+</p>
+
+<p>
 	<center> <i> error = ∑_(i=1)^N ( prediction - y)^2 </i> </center><br>
+</p>
+
+<p>
 	However, for the LogReg, we will use the sigmoid function as our prediction value. This will give us
 	the desired range of 0 to 1. The output of the sigmoid function can be seen in the below image:
 </p>
@@ -171,10 +186,15 @@ date: Monday 14th January 2020
 <p>
 	When mentioned above that the rule of thumb is we will use 0.5 to determine whether we will classify
 	the result as class 1 or class 0 - The value, 0.5, is known as a <i>Decision Boundary</i> since it
-	is used to create a boundary for classification by the model. <br>
+	is used to create a boundary for classification by the model.
+</p>
+
+<p>
 	<center><i> if h_θ (X.T*θ.T) >= 0.5, then y  = 1 </i></center><br>
 	<center><i> if h_θ (X.T*θ.T) < 0.5, then y  = 0 </i></center><br> 
-	
+</p>
+
+<p>
 	Therefore, we can see the decision boundary is a line defined by <i> X.T*θ.T </i> since it seperates the 
 	the area where y = 0 and y = 1. It should be noted that the <i>line</i> here can be <i>non-linear</i> 
 	since its defined by the feature variables <i>X</i> which can be non-linear. 
