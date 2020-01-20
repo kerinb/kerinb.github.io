@@ -53,15 +53,15 @@ date: Monday 14th January 2020
 <figure>
 <pre class="brush: python">
 <code>
-1. import numpy as np
-2. import pandas as pd
-3. import matplotlib.pyplot as plt
-4. from sklearn.datasets import load_iris
-5. from sklearn import datasets
-6. from sklearn.model_selection import train_test_split
-7. import math
+1.  import numpy as np
+2.  import pandas as pd
+3.  import matplotlib.pyplot as plt
+4.  from sklearn.datasets import load_iris
+5.  from sklearn import datasets
+6.  from sklearn.model_selection import train_test_split
+7.  import math
 8. 
-9. def sigmoid(x):
+9.  def sigmoid(x):
 10.     return 1 / (1 + np.exp(-x))
 11.
 12. def loss_function(y_train, prediction):
@@ -297,14 +297,14 @@ date: Monday 14th January 2020
 <figure>
 <pre class="brush: python">
 <code>
-1. import numpy as np
-2. import pandas as pd
-3. import matplotlib.pyplot as plt
-4. from sklearn.datasets import load_iris
-5. from sklearn import datasets
-6. from sklearn.model_selection import train_test_split
-7. from sklearn import linear_model
-8. import math
+1.  import numpy as np
+2.  import pandas as pd
+3.  import matplotlib.pyplot as plt
+4.  from sklearn.datasets import load_iris
+5.  from sklearn import datasets
+6.  from sklearn.model_selection import train_test_split
+7.  from sklearn import linear_model
+8.  import math
 9.
 10. def sigmoid(x):
 11.     return 1 / (1 + np.exp(-x))
@@ -362,7 +362,29 @@ date: Monday 14th January 2020
 <figure>
 <pre class="brush: python">
 <code>
-1. ENTER SKLEARN CODE HERE WITH COMMENTS!!!
+1.  import numpy as np
+2.  import pandas as pd
+3.  import matplotlib.pyplot as plt
+4.  from sklearn.datasets import load_iris
+5.  from sklearn import datasets
+6.  from sklearn.model_selection import train_test_split
+7.  from sklearn import linear_model
+8.  import math
+9. 
+10. iris = datasets.load_iris() # I may end up having to drop one of the labels
+11. # We will see if I can ge multi-classification to work! 
+12. 
+13. X = normalise(pd.DataFrame(iris.data[0:99, :2]))
+14. X = add_theta_0(X, X)
+15. y = pd.DataFrame(iris.target[0:99])
+16. 
+17. X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+18. 
+19. logreg = linear_model.LogisticRegression(solver='lbfgs',random_state=0)
+20. logreg.fit(X_train, y_train)
+21. 
+22. predicted_y = logreg.predict(X_test)
+23. print('\nAccuracy: {:.2f}'.format(logreg.score(X_test, y_test)))
 </code>
 </pre>
 </figure>
